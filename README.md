@@ -1,4 +1,4 @@
-# RocketBot2-APK
+# RocketBot2 PokeEase
 The Perfect GUI for Pokemon GO botting -- Work In Progress
 ![logo](http://i.imgur.com/rKuTwCM.jpg)
 
