@@ -23,7 +23,6 @@ using POGOProtos.Enums;
 using POGOProtos.Inventory.Item;
 using POGOProtos.Map.Fort;
 using POGOProtos.Map.Pokemon;
-using POGOProtos.Networking.Responses;
 using RocketBot2.CommandLineUtility;
 using RocketBot2.Helpers;
 using RocketBot2.Models;

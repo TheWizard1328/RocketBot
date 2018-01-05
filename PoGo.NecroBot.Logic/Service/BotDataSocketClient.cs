@@ -19,7 +19,6 @@ using System.Runtime.Caching;
 using System.Reflection;
 using TinyIoC;
 using static PoGo.NecroBot.Logic.Service.AnalyticsService;
-using Pogo;
 using PoGo.NecroBot.Logic.Utils;
 using GeoCoordinatePortable;
 

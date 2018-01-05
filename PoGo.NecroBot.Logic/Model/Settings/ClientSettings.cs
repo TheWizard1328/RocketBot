@@ -1,7 +1,6 @@
 using System;
 using PoGo.NecroBot.Logic.Enums;
 using PoGo.NecroBot.Logic.Service.Elevation;
-using PoGo.NecroBot.Logic.Utils;
 
 namespace PoGo.NecroBot.Logic.Model.Settings
 {

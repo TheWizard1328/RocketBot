@@ -1,7 +1,6 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
-using POGOLib.Official;
 
 namespace PoGo.NecroBot.Logic.Model.Settings
 {

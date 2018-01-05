@@ -1,6 +1,5 @@
 ﻿using System;
 using POGOProtos.Enums;
-using Pogo;
 
 namespace PoGo.NecroBot.Logic.Event
 {
