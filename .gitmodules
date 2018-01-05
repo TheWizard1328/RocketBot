@@ -1,0 +1,3 @@
+[submodule "RocketBot2/Resources/PokemonGO-Assets"]
+	path = RocketBot2/Resources/PokemonGO-Assets
+	url = ../../Necrobot-Private/PokemonGO-Assets.git
