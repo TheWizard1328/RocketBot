@@ -122,12 +122,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                     session.AddForts(new List<FortData>() { pokeStop }); //replace object in memory.
                 }
 
-                if (session.LogicSettings.EnableHumanWalkingSnipe)
-                {
-                    await MSniperServiceTask.Execute(session, cancellationToken).ConfigureAwait(false);
-                    await HumanWalkSnipeTask.Execute(session, cancellationToken, pokeStop, fortInfo).ConfigureAwait(false);
-                }
-
                 pokeStop = await GetNextPokeStop(session).ConfigureAwait(false);
             }
         }
@@ -201,8 +195,6 @@ namespace PoGo.NecroBot.Logic.Tasks
         private static DateTime lastCatch = DateTime.Now;
         private static async Task OnWalkingToPokeStopOrGym(ISession session, FortData pokeStop, CancellationToken cancellationToken)
         {
-            await MSniperServiceTask.Execute(session, cancellationToken).ConfigureAwait(false);
-
             //to avoid api call when walking.
             //if (lastCatch < DateTime.Now.AddSeconds(-2))
             //{
@@ -571,8 +563,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                             var totalBalls = (await session.Inventory.GetItems().ConfigureAwait(false)).Where(x => x.ItemId == ItemId.ItemPokeBall || x.ItemId == ItemId.ItemGreatBall || x.ItemId == ItemId.ItemUltraBall).Sum(x => x.Count);
                             Logger.Write($"Ball requires for by pass catch flee {totalBalls}/{CatchPokemonTask.BALL_REQUIRED_TO_BYPASS_CATCHFLEE}");
                         }
-                        else
-                            MSniperServiceTask.UnblockSnipe(false);
                     }
                     if (fortSearch.Result == FortSearchResponse.Types.Result.InventoryFull)
                     {

@@ -11,7 +11,6 @@ namespace PoGo.NecroBot.Logic.Exceptions
         public double LastLongitude { get; set; }
         public PokemonId LastEncounterPokemonId { get; set; }
         public Account Bot { get; set; }
-        public bool Snipe { get; set; }
         public EncounteredEvent EncounterData { get; set; }
     }
 }

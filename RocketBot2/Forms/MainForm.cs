@@ -1629,7 +1629,6 @@ namespace RocketBot2.Forms
                 {
                     var lat = double.Parse(crds[0]);
                     var lng = double.Parse(crds[1]);
-                    //If lastcoord is snipe coord, bot start from default location
 
                     if (LocationUtils.CalculateDistanceInMeters(lat, lng, _session.Settings.AccountLatitude, _session.Settings.AccountLongitude) < 2000)
                     {
@@ -1826,11 +1825,9 @@ namespace RocketBot2.Forms
                                        $"Range: {MinSpeed:0.00} - {MaxSpeed:0.00} Km/h");
             };
             Resources.ProgressBar.Fill(60);
-            var snipeEventListener = new SniperEventListener();
 
             _session.EventDispatcher.EventReceived += evt => listener.Listen(evt, _session);
             _session.EventDispatcher.EventReceived += evt => aggregator.Listen(evt, _session);
-            _session.EventDispatcher.EventReceived += evt => snipeEventListener.Listen(evt, _session);
 
             Resources.ProgressBar.Fill(70);
 
@@ -1957,37 +1954,8 @@ namespace RocketBot2.Forms
 
             if (settings.TelegramConfig.UseTelegramAPI)
                 _session.Telegram = new TelegramService(settings.TelegramConfig.TelegramAPIKey, _session);
-            if (_session.LogicSettings.EnableHumanWalkingSnipe &&
-                            _session.LogicSettings.HumanWalkingSnipeUseFastPokemap)
-            {
-                HumanWalkSnipeTask.StartFastPokemapAsync(_session,
-                    _session.CancellationTokenSource.Token).ConfigureAwait(false); // that need to keep data live
-            }
-
-            if (_session.LogicSettings.UseSnipeLocationServer ||
-              _session.LogicSettings.HumanWalkingSnipeUsePogoLocationFeeder)
-                SnipePokemonTask.AsyncStart(_session).ConfigureAwait(false);
-
-
-            if (_session.LogicSettings.DataSharingConfig.EnableSyncData)
-            {
-                BotDataSocketClient.StartAsync(_session, Properties.Resources.EncryptKey);
-                _session.EventDispatcher.EventReceived += evt => BotDataSocketClient.Listen(evt, _session);
-            }
+            
             settings.CheckProxy(_session.Translation);
-
-            if (_session.LogicSettings.ActivateMSniper)
-            {
-                ServicePointManager.ServerCertificateValidationCallback +=
-                    (sender, certificate, chain, sslPolicyErrors) => true;
-                //temporary disable MSniper connection because site under attacking.
-                //MSniperServiceTask.ConnectToService();
-                //_session.EventDispatcher.EventReceived += evt => MSniperServiceTask.AddToList(evt);
-            }
-
-            _session.AnalyticsService.StartAsync(_session, _session.CancellationTokenSource.Token).ConfigureAwait(false);
-
-            _session.EventDispatcher.EventReceived += evt => AnalyticsService.Listen(evt, _session);
 
             QuitEvent.WaitOne();
             return Task.CompletedTask;

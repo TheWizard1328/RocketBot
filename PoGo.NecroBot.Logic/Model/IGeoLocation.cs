@@ -39,15 +39,6 @@ namespace PoGo.NecroBot.Logic.Model
         }
     }
 
-    public class SnipeLocation : MapLocation
-    {
-        public SnipeLocation(double lat, double lng, double alt) : base(lat, lng, alt)
-        {
-        }
-
-        public PokemonData Pokemon { get; set; }
-    }
-
     public class MapLocation : IGeoLocation
     {
         public double Latitude { get; set; }

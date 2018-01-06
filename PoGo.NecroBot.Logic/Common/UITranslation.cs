@@ -15,12 +15,6 @@ namespace PoGo.NecroBot.Logic.Common
         [Description("Accounts")]
         public string AccountSetting { get; set; }
 
-        [Description("SNIPE")]
-        public string SnipeText { get; set; }
-
-        [Description("ALL BOT SNIPE")]
-        public string SnipeAllBotText { get; set; }
-
         [Description("Help")]
         public string Help { get; set; }
 
@@ -70,39 +64,6 @@ namespace PoGo.NecroBot.Logic.Common
         public string WalkHere { get; set; }
 
         #endregion
-        #region snipe screen
-
-        [Description("100% IV")]
-        public string TabSnipeIV100 { get; set; }
-
-        [Description("Rare Pokemon")]
-        public string TabSnipeRarePokemon { get; set; }
-
-        [Description("Others")]
-        public string TabSnipeOtherPokemon { get; set; }
-
-        [Description("Not in Dex")]
-        public string TabSnipeNotInDexPokemon { get; set; }
-
-        [Description("Auto Snipe List")]
-        public string TabSnipeAutoListPokemon { get; set; }
-
-        [Description("Add Manual Coordinate")]
-        public string TabSnipeAddManualCoord { get; set; }
-
-        [Description("Snipe??")]
-        public string SnipeButton { get; set; }
-
-        [Description("FreeInput")]
-        public string FreeInput { get; set; }
-
-        [Description("You can copy & paste any free text content which has pokemon name, latitude, longitude then bot will parse that content to get the snipe infomation.")]
-        public string FreeInputExplain { get; set; }
-
-        [Description("Add To Snipe")]
-        public string AddToSnipeButtonText { get; set; }
-
-        #endregion
         #region Pokemon Inventory
         [Description("TRANSFER CONFIRM?")]
         public string TransferConfirmCaption { get; set; }
@@ -133,12 +94,6 @@ namespace PoGo.NecroBot.Logic.Common
 
         [Description("Evolve Filter Setting")]
         public string MenuEvolveFilterText { get; set; }
-
-        [Description("Snipe Filter Setting")]
-        public string MenuSnipeFilterText { get; set; }
-
-        [Description("Snipe Upgrade Setting")]
-        public string MenuUpgradeFilterText { get; set; }
 
         [Description("This pokemon can be evolve to below pokemon , please select the branch you want to evolve to")]
         public string EvolveConfirm { get; set; }

@@ -85,8 +85,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                         await session.Navigation.Move(destination,
                             async () =>
                             {
-                                await MSniperServiceTask.Execute(session, cancellationToken).ConfigureAwait(false);
-
                                 await CatchNearbyPokemonsTask.Execute(session, cancellationToken).ConfigureAwait(false);
                                 //Catch Incense Pokemon
                                 await CatchIncensePokemonsTask.Execute(session, cancellationToken).ConfigureAwait(false);

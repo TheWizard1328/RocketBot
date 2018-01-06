@@ -161,34 +161,5 @@ namespace PoGo.NecroBot.Logic.State
             }
             return PokemonId.Missingno;
         }
-
-        private static CatchablePokemon Map(HumanWalkSnipeTask.FastPokemapItem result)
-        {
-            return new CatchablePokemon
-            {
-                Latitude = result.lnglat.coordinates[1],
-                Longitude = result.lnglat.coordinates[0],
-                PokemonId = GetId(result.pokemon_id),
-                ExpiredTime = result.expireAt.ToLocalTime(),
-                SpawnId = result.spawn_id,
-                //Source = "Fastpokemap"
-                EncounteredId = Convert.ToUInt64(result.encounter_id)
-            };
-        }
-
-        public static void AddFastPokemapItem(dynamic jsonData)
-        {
-            var list = JsonConvert.DeserializeObject<List<HumanWalkSnipeTask.FastPokemapItem>>(jsonData.ToString());
-
-            //List<CatchablePokemon> result = new List<CatchablePokemon>();
-            foreach (var item in list)
-            {
-                var snipeItem = Map(item);
-                if (!data.Exists(p => p.EncounteredId == snipeItem.EncounteredId))
-                {
-                    data.Add(snipeItem);
-                }
-            }
-        }
     }
 }

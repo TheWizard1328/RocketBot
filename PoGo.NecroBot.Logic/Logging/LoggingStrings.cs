@@ -20,7 +20,6 @@ namespace PoGo.NecroBot.Logic.Logging
         public static string Pkmn;
         public static string Pokestop;
         public static string Recycling;
-        public static string Sniper;
         public static string Transferred;
         public static string Update;
         public static string New;
@@ -76,10 +75,6 @@ namespace PoGo.NecroBot.Logic.Logging
             Recycling =
                 session?.Translation.GetTranslation(
                     TranslationString.LogEntryRecycling) ?? "RECYCLING";
-
-            Sniper =
-                session?.Translation.GetTranslation(
-                    TranslationString.LogEntrySniper) ?? "SNIPER";
 
             Transferred =
                 session?.Translation.GetTranslation(

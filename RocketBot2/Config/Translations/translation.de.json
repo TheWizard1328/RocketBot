@@ -1,34 +1,6 @@
 ﻿{
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) Nicht ausreichend Baelle um den 'Catch Em-All' Modus zu aktivieren. ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(HUMAN WALK) Found {0} spawning | lat: {1}, lng: {2}, dist {3:0.00}m , expired in {4:00} min {5:00} sec | Walk time est : {6:00} min {7:00} sec | Spin: {8} | Catch : {9} | Speed : {10:0.00}km/h"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK) Found {0} pokemon matched with you filters. Human walking sniper won't catch em all, but will try to catch as many as possible"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK) You are {0:0.00m} away from nearest pokestop. Restart farming at this place with {1} pokestops"
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK) destination reached | lat: {0}, lng: {1} | wait  {3:0.00} sec"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Sniper zaehler {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Sniper muss pausiert werden, bevor dein Account gebannt wird"
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "Du faengst zu schnell. Die naechsten {0} Sekunden kann nichts mehr gefangen werden"
     },
@@ -463,22 +435,6 @@
     {
       "Key": "MissingCredentialsPtc",
       "Value": "Es muessen PtcUsername & PtcPassword in auth.json ausgefuellt werden!"
-    },
-    {
-      "Key": "SnipeScan",
-      "Value": "Scannen nach Snipebaren Pokemon in {0}..."
-    },
-    {
-      "Key": "SnipeScanEx",
-      "Value": "Snipe ein {0} mit {1} IV in {2}..."
-    },
-    {
-      "Key": "NoPokemonToSnipe",
-      "Value": "Kein Pokemon zum Snipen gefunden"
-    },
-    {
-      "Key": "NotEnoughPokeballsToSnipe",
-      "Value": "Nicht genug Pokebaelle um Snipen zu starten! ({0}/{1})"
     },
     {
       "Key": "DisplayHighestMove1Header",

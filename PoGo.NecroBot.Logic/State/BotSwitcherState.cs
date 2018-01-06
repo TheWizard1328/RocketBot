@@ -35,21 +35,7 @@ namespace PoGo.NecroBot.Logic.State
                 await CatchNearbyPokemonsTask.Execute(session, cancellationToken, pokemonToCatch).ConfigureAwait(false);
                 await CatchLurePokemonsTask.Execute(session, cancellationToken).ConfigureAwait(false);
             }
-            else
-            {
-                //snipe pokemon 
-                await MSniperServiceTask.CatchWithSnipe(session, new MSniperServiceTask.MSniperInfo2()
-                {
-                    AddedTime = DateTime.Now,
-                    Latitude = encounterData.Latitude, 
-                    Longitude = encounterData.Longitude,
-                    Iv = encounterData.IV, 
-                    PokemonId =(short)encounterData.PokemonId,
-                    SpawnPointId = encounterData.SpawnPointId,
-                    EncounterId = Convert.ToUInt64(encounterData.EncounterId)
-                }, session.CancellationTokenSource.Token).ConfigureAwait(false);
-            }
-            return new InfoState();
+           return new InfoState();
         }
     }
 }

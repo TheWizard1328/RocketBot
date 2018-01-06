@@ -77,7 +77,6 @@ namespace PoGo.NecroBot.Logic.Tasks
             OnPokemonEncounterEvent(pokemons.ToList());
 
             EncounterResponse encounter = null;
-            //if that is snipe pokemon and inventories if full, execute transfer to get more room for pokemon
             if (priorityPokemon != null)
             {
                 pokemons.Insert(0, priorityPokemon);
@@ -121,16 +120,8 @@ namespace PoGo.NecroBot.Logic.Tasks
             //masterBallsCount = masterBallsCount ?? 0; //return null ATM. need this code to logic check work
             var PokeBalls = pokeBallsCount + greatBallsCount + ultraBallsCount + masterBallsCount;
 
-            if (pokemons.Count > 0)
-                if (PokeBalls >= session.LogicSettings.PokeballsToKeepForSnipe)  // Don't display if not enough Pokeballs - TheWizrad1328
-                  Logger.Write($"Catching {pokemons.Count} Pokemon Nearby...", LogLevel.Info);
-              else
-                  Logger.Write($"collecting {session.LogicSettings.PokeballsToKeepForSnipe - PokeBalls} more Pokeballs. Catching of pokemon is temporarily susspended...", LogLevel.Info);
-
             foreach (var pokemon in pokemons)
             {
-                await MSniperServiceTask.Execute(session, cancellationToken).ConfigureAwait(false);
-
                 /*
                 if (LocationUtils.CalculateDistanceInMeters(pokemon.Latitude, pokemon.Longitude, session.Client.ClientSession.Player.Latitude, session.Client.ClientSession.Player.Longitude) > session.Client.GlobalSettings.MapSettings.EncounterRangeMeters)
                 {
@@ -145,14 +136,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                 if (session.Cache.GetCacheItem(CatchPokemonTask.GetEncounterCacheKey(pokemon.EncounterId)) != null)
                 {
                     continue; //this pokemon has been skipped because not meet with catch criteria before.
-                }
-
-                if (PokeBalls < session.LogicSettings.PokeballsToKeepForSnipe && session.CatchBlockTime < DateTime.Now)
-                {
-                    session.CatchBlockTime = DateTime.Now.AddMinutes(session.LogicSettings.OutOfBallCatchBlockTime);
-                    Logger.Write(session.Translation.GetTranslation(TranslationString.CatchPokemonDisable,
-                        session.LogicSettings.OutOfBallCatchBlockTime, session.LogicSettings.PokeballsToKeepForSnipe));
-                    return;
                 }
 
                 if (session.CatchBlockTime > DateTime.Now) return;
@@ -172,8 +155,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                     session.Client.ClientSession.Player.Longitude, pokemon.Latitude, pokemon.Longitude);
                 await Task.Delay(distance > 100 ? 500 : 100, cancellationToken).ConfigureAwait(false);
                 */
-
-                //to avoid duplicated encounter when snipe priority pokemon
 
                 if (encounter == null || encounter.Status != EncounterResponse.Types.Status.EncounterSuccess)
                 {

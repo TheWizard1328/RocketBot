@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) ไม่มีลูกบอลมากพอที่จะใช้จับและใช้ในโหมดทั้งหมดของ Em. ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(HUMAN WALK) พบ {0} ฟักไข่ | ละติจูด : {1}, ลองติจูด : {2}, ปลายทางอีก {3:0.00} เมตร , เหลือเวลาอีก {4:00} นาที {5:00} วินาที | ต้องใช้เวลาเดินอีก : {6:00} นาที {7:00} วินาที | หมุนเสา : {8} | จับ : {9} | ความเร็ว : {10:0.00} กิโลเมตร/ชั่วโมง"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK) พบ {0} โปเกมอน ที่ตรงกับที่คุณตั้งค่าไว้. Sniper ของเราจะเดินไปจับให้ได้ให้มากที่สุดเท่าที่จะทำได้"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK) คุณห่างจาก Poke Stops ที่ใกล้ที่สุดอีก : {0:0.00m}. จะเริ่มไปที่ Poke Stops โดย : {1} "
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK) ถึงปลายทาง | ละติจูด : {0}, ลองติจูด : {1} | รออีก  {3:0.00} วินาที"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "นับ Sniper {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Sniper จำเป็นจะต้องใช้เวลาที่เหลือของคุณ ก่อนที่บัญชีคุณจะโดนแบน"
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "คุณจับเร็วเกินไป. คุณจะไม่สามารถจับได้อีกจนกว่า  {0} วินาทีผ่านไป"
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": " การเพาะปลูก "
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": " การปั่น "
     },
     {
       "Key": "logEntryRecycling",
@@ -533,22 +501,6 @@
       "Value": "คุณจำเป็นต้องกรอกข้อมูลบัญชี PTC ของคุณทั้งชื่อผู้ใช้และรหัสผ่านในไฟล์ auth.json!"
     },
     {
-      "Key": "snipeScan",
-      "Value": "กำลังค้นหา PokeStops ของโปเกมอนที่ {0}..."
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "กำลังปั่น {0} ด้วย {1} IV ที่ {2}..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "ไม่พบโปเกมอนในพื้นที่นี้, หรือยังไม่เกิดโปเกมอน?"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "ไม่มีโปเกบอลที่จะทำการปั่น! ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "เคลื่อนย้าย 1"
     },
@@ -607,10 +559,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "โปเกมอนอัพเกรดล้มเหลวโปรดเช็คข้อมูลพื้นที่คงเหลือของคุณ"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "ระบบปั่น Poke Stops ไม่ทำงาน. กำลังข้ามส่วนนี้..."
     },
     {
       "Key": "firstStartPrompt",

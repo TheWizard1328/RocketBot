@@ -44,11 +44,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                         session.Settings.AccountLongitude).ConfigureAwait(false)
                 );
 
-                await session.Navigation.Move(defaultLocation,
-                    async () => { await MSniperServiceTask.Execute(session, cancellationToken).ConfigureAwait(false); },
-                    session,
-                    cancellationToken).ConfigureAwait(false);
-
                 // we have moved this distance, so apply it immediately to the egg walker.
                 await eggWalker.ApplyDistance(distanceFromStart, cancellationToken).ConfigureAwait(false);
             }

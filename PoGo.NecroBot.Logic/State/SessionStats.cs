@@ -12,8 +12,6 @@ namespace PoGo.NecroBot.Logic.State
         const string POKESTOP_STATS_COLLECTION = "PokeStopTimestamps";
         const string POKEMON_STATS_COLLECTION = "PokemonTimestamps";
 
-        public int SnipeCount { get; set; }
-        public DateTime LastSnipeTime { get; set; }
         public DateTime StartTime { get; set; }
         public bool IsSnipping { get; internal set; }
 

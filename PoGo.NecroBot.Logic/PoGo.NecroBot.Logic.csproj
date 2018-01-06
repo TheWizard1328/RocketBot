@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PoGo.NecroBot.Logic</RootNamespace>
     <AssemblyName>PoGo.NecroBot.Logic</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
@@ -293,7 +293,6 @@
     <Compile Include="Event\Gym\GymTeamJoinEvent.cs" />
     <Compile Include="Event\Gym\GymWalkToTargetEvent.cs" />
     <Compile Include="Event\HumanWalkingEvent.cs" />
-    <Compile Include="Event\HumanWalkSnipeEvent.cs" />
     <Compile Include="Event\InfoEvent.cs" />
     <Compile Include="Event\InventoryListEvent.cs" />
     <Compile Include="Event\Inventory\FavoriteEvent.cs" />
@@ -311,17 +310,9 @@
     <Compile Include="Event\Player\TargetLocationEvent.cs" />
     <Compile Include="Event\PokemonsEncounterEvent.cs" />
     <Compile Include="Event\PokestopLimitUpdate.cs" />
-    <Compile Include="Event\SnipePokemonFoundEvent.cs" />
-    <Compile Include="Event\SnipeEvent.cs" />
-    <Compile Include="Event\SnipeModeEvent.cs" />
     <Compile Include="Event\PokemonListEvent.cs" />
     <Compile Include="Event\PokemonLevelUpEvent.cs" />
-    <Compile Include="Event\SnipeScanEvent.cs" />
     <Compile Include="Event\NicknameUpdateEvent.cs" />
-    <Compile Include="Event\Snipe\AllBotSnipeEvent.cs" />
-    <Compile Include="Event\Snipe\AutoSnipePokemonAddedEvent.cs" />
-    <Compile Include="Event\Snipe\SnipePokemonStarted.cs" />
-    <Compile Include="Event\Snipe\SnipePokemonUpdateEvent.cs" />
     <Compile Include="Event\RenamePokemonEvent.cs" />
     <Compile Include="Event\UI\StatusBarEvent.cs" />
     <Compile Include="Event\UpgradePokemonEvent.cs" />
@@ -433,7 +424,6 @@
     <Compile Include="Model\Settings\CaptchaConfig.cs" />
     <Compile Include="Model\Settings\ConsoleConfig.cs" />
     <Compile Include="Model\Settings\CustomCatchConfig.cs" />
-    <Compile Include="Model\Settings\DataSharingConfig.cs" />
     <Compile Include="Model\Settings\APIConfig.cs" />
     <Compile Include="Model\Settings\DeviceConfig.cs" />
     <Compile Include="Model\Settings\EvolveConfig.cs" />
@@ -443,11 +433,8 @@
     <Compile Include="Model\Settings\GlobalSettings.cs" />
     <Compile Include="Model\Settings\GoogleWalkConfig.cs" />
     <Compile Include="Model\Settings\GpxConfig.cs" />
-    <Compile Include="Model\Settings\GUIConfig.cs" />
     <Compile Include="Model\Settings\GymConfig.cs" />
     <Compile Include="Model\Settings\HumanlikeDelays.cs" />
-    <Compile Include="Model\Settings\HumanWalkSnipeConfig.cs" />
-    <Compile Include="Model\Settings\HumanWalkSnipeFilter.cs" />
     <Compile Include="Model\Settings\IPokemonFilter.cs" />
     <Compile Include="Model\Settings\ItemRecycleFilter.cs" />
     <Compile Include="Model\Settings\LevelUpConfig.cs" />
@@ -460,13 +447,11 @@
     <Compile Include="Model\Settings\PokeStopConfig.cs" />
     <Compile Include="Model\Settings\ProxyConfig.cs" />
     <Compile Include="Model\Settings\ItemRecycleConfig.cs" />
-    <Compile Include="Model\Settings\SnipeConfig.cs" />
     <Compile Include="Model\Settings\EvolveFilter.cs" />
     <Compile Include="Model\Settings\CatchSettings.cs" />
     <Compile Include="Model\Settings\SoftBanConfig.cs" />
     <Compile Include="Model\Settings\TelegramConfig.cs" />
     <Compile Include="Model\Settings\TransferConfig.cs" />
-    <Compile Include="Model\Settings\SnipeFilter.cs" />
     <Compile Include="Model\Settings\TransferFilter.cs" />
     <Compile Include="Model\Settings\UpdateConfig.cs" />
     <Compile Include="Model\Settings\UpgradeFilter.cs" />
@@ -485,10 +470,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Service\BotDataSocketClient.cs" />
     <Compile Include="Service\ConsoleEventListener.cs" />
     <Compile Include="Service\PushNotificationListener.cs" />
-    <Compile Include="Service\SniperEventListener.cs" />
     <Compile Include="Service\TelegramCommand\ICommand.cs" />
     <Compile Include="Service\TelegramCommand\LocCommand.cs" />
     <Compile Include="Service\TelegramUtils.cs" />
@@ -502,7 +485,6 @@
     <Compile Include="Service\TelegramCommand\AccountsCommand.cs" />
     <Compile Include="Service\TelegramCommand\CommandLocation.cs" />
     <Compile Include="Service\TelegramCommand\CommandMessage.cs" />
-    <Compile Include="Service\TelegramCommand\SnipeCommand.cs" />
     <Compile Include="Service\TelegramCommand\RecycleCommand.cs" />
     <Compile Include="Service\TelegramCommand\LogsCommand.cs" />
     <Compile Include="Service\TelegramCommand\RestartCommand.cs" />
@@ -520,10 +502,7 @@
     <Compile Include="Service\MapzenDirectionsService.cs" />
     <Compile Include="Service\WebSocketHandler\ActionCommands\DropItemHandler.cs" />
     <Compile Include="Service\WebSocketHandler\ActionCommands\EvolvePokemonHandler.cs" />
-    <Compile Include="Service\WebSocketHandler\ActionCommands\FastpokemapHandler.cs" />
     <Compile Include="Service\WebSocketHandler\ActionCommands\FavoritePokemonHandler.cs" />
-    <Compile Include="Service\WebSocketHandler\ActionCommands\HumanSnipePriorityPokemonHandler.cs" />
-    <Compile Include="Service\WebSocketHandler\ActionCommands\HumanSnipeRemovePokemonHandler.cs" />
     <Compile Include="Service\WebSocketHandler\ActionCommands\LevelUpPokemonHandler.cs" />
     <Compile Include="Service\WebSocketHandler\ActionCommands\SetConfigHandler.cs" />
     <Compile Include="Service\WebSocketHandler\ActionCommands\SetMoveToTargetHandler.cs" />
@@ -535,7 +514,6 @@
     <Compile Include="Service\WebSocketHandler\GetCommands\Events\EggListResponce.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Events\ItemListResponce.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Events\PokemonListResponce.cs" />
-    <Compile Include="Service\WebSocketHandler\GetCommands\Events\SnipeListResponce.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Events\TrainerProfileResponce.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Events\WebResponce.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\GetConfigHandler.cs" />
@@ -543,7 +521,6 @@
     <Compile Include="Service\WebSocketHandler\GetCommands\GetItemsListHandler.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\GetPokemonListHandler.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\GetPokemonSettingsHandler.cs" />
-    <Compile Include="Service\WebSocketHandler\GetCommands\GetPokemonSnipeListHandler.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\GetTrainerProfileHandler.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Helpers\ConfigWeb.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Helpers\EggListWeb.cs" />
@@ -554,7 +531,6 @@
     <Compile Include="Service\WebSocketHandler\GetCommands\Tasks\GetItemListTask.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Tasks\GetPokemonListTask.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Tasks\GetPokemonSettingsTask.cs" />
-    <Compile Include="Service\WebSocketHandler\GetCommands\Tasks\GetPokemonSnipeListTask.cs" />
     <Compile Include="Service\WebSocketHandler\GetCommands\Tasks\GetTrainerProfileTask.cs" />
     <Compile Include="Service\WebSocketHandler\IWebSocketRequestHandler.cs" />
     <Compile Include="Service\WebSocketHandler\IWebSocketResponce.cs" />
@@ -583,28 +559,6 @@
     <Compile Include="Tasks\GetGymBadgeDetailsTask.cs" />
     <Compile Include="Tasks\GetPokeDexCount.cs" />
     <Compile Include="Tasks\HumanRandomActionTask.cs" />
-    <Compile Include="Tasks\HumanWalkSnipeTask.cs" />
-    <Compile Include="Tasks\HumanWalkSnipeTask.FastPokemap.cs">
-      <DependentUpon>HumanWalkSnipeTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tasks\HumanWalkSnipeTask.Pokecrew.cs">
-      <DependentUpon>HumanWalkSnipeTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tasks\HumanWalkSnipeTask.Pokeradar.cs">
-      <DependentUpon>HumanWalkSnipeTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tasks\HumanWalkSnipeTask.Pokesnipers.cs">
-      <DependentUpon>HumanWalkSnipeTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tasks\HumanWalkSnipeTask.PokeWatchers.cs">
-      <DependentUpon>HumanWalkSnipeTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tasks\HumanWalkSnipeTask.PokeZZ.cs">
-      <DependentUpon>HumanWalkSnipeTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tasks\HumanWalkSnipeTask.Skiplagged.cs">
-      <DependentUpon>HumanWalkSnipeTask.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tasks\InventoryListTask.cs" />
     <Compile Include="Tasks\LevelUpPokemonTask.cs" />
     <Compile Include="Tasks\LevelUpSpecificPokemonTask.cs" />
@@ -634,8 +588,6 @@
     <Compile Include="Tasks\RenamePokemonTask.cs" />
     <Compile Include="Tasks\SelectBuddyPokemonTask.cs" />
     <Compile Include="Tasks\SetMoveToTargetTask.cs" />
-    <Compile Include="Tasks\MSniperServiceTask.cs" />
-    <Compile Include="Tasks\SnipePokemonTask.cs" />
     <Compile Include="Tasks\TransferDuplicatePokemonTask.cs" />
     <Compile Include="Event\UseLuckyEggEvent.cs" />
     <Compile Include="State\VersionCheckState.cs" />

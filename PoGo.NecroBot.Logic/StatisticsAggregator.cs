@@ -56,15 +56,7 @@ namespace PoGo.NecroBot.Logic
             _stats.Dirty(session.Inventory, session);
         }
 
-        public void HandleEvent(SnipeModeEvent evt, ISession session)
-        {
-        }
-
         public void HandleEvent(ErrorEvent evt, ISession session)
-        {
-        }
-
-        public void HandleEvent(SnipeScanEvent evt, ISession session)
         {
         }
 
@@ -172,10 +164,6 @@ namespace PoGo.NecroBot.Logic
         }
 
         private void HandleEvent(PokemonListEvent event1, ISession session)
-        {
-        }
-
-        private void HandleEvent(SnipeEvent event1, ISession session)
         {
         }
     }

@@ -41,10 +41,6 @@ namespace RocketBot2.Forms
             txtWebsocketPort.Text = settings.WebsocketsConfig.WebSocketPort.ToString();
             chkAllowWebsocket.Checked = settings.WebsocketsConfig.UseWebsocket;
 
-            chkSnipeDex.Checked = Session.LogicSettings.SnipePokemonNotInPokedex;
-            chkEnableSnipe.Checked = Session.LogicSettings.DataSharingConfig.AutoSnipe;
-            txtMinIV.Text = Session.LogicSettings.MinIVForAutoSnipe.ToString();
-            txtMinLevel.Text = Session.LogicSettings.MinLevelForAutoSnipe.ToString();
             this.elevationService = elevationService;
             this.configFile = configFile;
         }
@@ -117,16 +113,6 @@ namespace RocketBot2.Forms
             Close();
         }
 
-        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://necrobot2.com/config.json/2017/01/07/how-to-config-auto-snipe/");
-        }
-
-        private void SnipePage_Initialize(object sender, WizardPageInitEventArgs e)
-        {
-           
-        }
-
         private void LocationPage_Commit(object sender, WizardPageConfirmEventArgs e)
         {
             Session.Settings.AccountLatitude = Convert.ToDouble(txtLat.Text);
@@ -152,17 +138,6 @@ namespace RocketBot2.Forms
         {
             settings.WebsocketsConfig.UseWebsocket = chkAllowWebsocket.Checked;
             settings.WebsocketsConfig.WebSocketPort = Convert.ToInt32(txtWebsocketPort.Text);
-        }
-
-        private void SnipePage_Commit(object sender, WizardPageConfirmEventArgs e)
-        {
-            settings.SnipeConfig.MinLevelForAutoSnipe = int.Parse(txtMinLevel.Text);
-            settings.SnipeConfig.MinIVForAutoSnipe = int.Parse(txtMinIV.Text);
-            settings.DataSharingConfig.AutoSnipe = chkEnableSnipe.Checked;
-            settings.SnipeConfig.SnipePokemonNotInPokedex = chkSnipeDex.Checked;
-
-        }
-
-      
+        }     
     }
 }

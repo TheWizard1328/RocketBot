@@ -15,14 +15,10 @@ namespace PoGo.NecroBot.Logic.Interfaces.Configuration
         bool CatchPokemon { get; }
         bool ByPassCatchFlee { get; }
         int OutOfBallCatchBlockTime { get; }
-        int PokeballsToKeepForSnipe { get; }
         int CatchPokemonLimit { get; }
         int CatchPokemonLimitMinutes { get; }
         int PokeStopLimit { get; }
         int PokeStopLimitMinutes { get; }
-        int SnipeCountLimit { get; }
-        int MinIVForAutoSnipe { get; }
-        int SnipeRestSeconds { get; }
         bool TransferWeakPokemon { get; }
         bool DisableHumanWalking { get; }
         bool CheckForUpdates { get; }
@@ -40,7 +36,6 @@ namespace PoGo.NecroBot.Logic.Interfaces.Configuration
         bool RandomlyPauseAtStops { get; }
         bool FastSoftBanBypass { get; }
         int ByPassSpinCount { get; }
-        double AutoSnipeMaxDistance { get; }
         bool UseTransferFilterToCatch { get; }
         bool TransferDuplicatePokemon { get; }
         bool TransferDuplicatePokemonOnCapture { get; }
@@ -78,9 +73,6 @@ namespace PoGo.NecroBot.Logic.Interfaces.Configuration
         int DelayBetweenPlayerActions { get; }
         bool UsePokemonToNotCatchFilter { get; }
         bool UsePokemonToCatchLocallyListOnly { get; }
-        string SnipeLocationServer { get; }
-        int SnipeLocationServerPort { get; }
-        bool UseSnipeLocationServer { get; }
         int KeepMinDuplicatePokemon { get; }
         int KeepMaxDuplicatePokemon { get; }
         bool PrioritizeIvOverCp { get; }
@@ -126,16 +118,10 @@ namespace PoGo.NecroBot.Logic.Interfaces.Configuration
         string ProfileConfigPath { get; }
         string GeneralConfigPath { get; }
         int SchemaVersion { get; }
-        bool SnipeAtPokestops { get; }
-        bool ActivateMSniper { get; }
         bool UseTelegramAPI { get; }
         string TelegramAPIKey { get; }
         string TelegramPassword { get; }
-        int MinPokeballsToSnipe { get; }
-        int MinPokeballsWhileSnipe { get; }
         int MaxPokeballsPerPokemon { get; }
-        int MinDelayBetweenSnipes { get; }
-        bool SnipePokemonNotInPokedex { get; }
         bool RandomizeRecycle { get; }
         int RandomRecycleValue { get; }
 
@@ -155,7 +141,6 @@ namespace PoGo.NecroBot.Logic.Interfaces.Configuration
         bool DetailedCountsBeforeRecycling { get; }
         bool VerboseRecycling { get; }
         double RecycleInventoryAtUsagePercentage { get; }
-        bool UseSnipeLimit { get; }
         bool UsePokeStopLimit { get; }
         bool UseCatchLimit { get; }
         bool UseNearActionRandom { get; }
@@ -172,7 +157,6 @@ namespace PoGo.NecroBot.Logic.Interfaces.Configuration
         ICollection<PokemonId> PokemonToUseMasterball { get; }
 
         Dictionary<PokemonId, TransferFilter> PokemonsTransferFilter { get; }
-        Dictionary<PokemonId, SnipeFilter> PokemonSnipeFilters { get; }
         Dictionary<PokemonId, EvolveFilter> PokemonEvolveFilters { get; }
         Dictionary<PokemonId, UpgradeFilter> PokemonUpgradeFilters { get; }
 
@@ -197,59 +181,24 @@ namespace PoGo.NecroBot.Logic.Interfaces.Configuration
         int ResumeTrackSeg { get; }
         int ResumeTrackPt { get; }
 
-        bool EnableHumanWalkingSnipe { get; }
-        bool HumanWalkingSnipeDisplayList { get; }
-        double HumanWalkingSnipeMaxDistance { get; }
-        double HumanWalkingSnipeMaxEstimateTime { get; }
-        bool HumanWalkingSnipeTryCatchEmAll { get; }
-        int HumanWalkingSnipeCatchEmAllMinBalls { get; }
-        bool HumanWalkingSnipeCatchPokemonWhileWalking { get; }
-        bool HumanWalkingSnipeSpinWhileWalking { get; }
-        bool HumanWalkingSnipeAlwaysWalkBack { get; }
-        double HumanWalkingSnipeWalkbackDistanceLimit { get; }
-        double HumanWalkingSnipeSnipingScanOffset { get; }
-        bool HumanWalkingSnipeIncludeDefaultLocation { get; }
-        bool HumanWalkingSnipeUseSnipePokemonList { get; }
-        Dictionary<PokemonId, HumanWalkSnipeFilter> HumanWalkSnipeFilters { get; }
-        bool HumanWalkingSnipeAllowSpeedUp { get; }
-        double HumanWalkingSnipeMaxSpeedUpSpeed { get; }
-        int HumanWalkingSnipeDelayTimeAtDestination { get; }
-        bool HumanWalkingSnipeAllowTransferWhileWalking { get; }
-
-        bool HumanWalkingSnipeUsePokeRadar { get; }
-        bool HumanWalkingSnipeUseSkiplagged { get; }
-        bool HumanWalkingSnipeUsePokecrew { get; }
-        bool HumanWalkingSnipeUsePokesnipers { get; }
-        bool HumanWalkingSnipeUsePokeZZ { get; }
-        bool HumanWalkingSnipeUsePokeWatcher { get; }
-        bool HumanWalkingSnipeUseFastPokemap { get; }
-        bool HumanWalkingSnipeUsePogoLocationFeeder { get; }
-
         int EvolveActionDelay { get; }
         int TransferActionDelay { get; }
         int RecycleActionDelay { get; }
         int RenamePokemonActionDelay { get; }
 
         GymConfig GymConfig { get; }
-        DataSharingConfig DataSharingConfig { get; }
         MultipleBotConfig MultipleBotConfig { get; }
         List<AuthConfig> Bots { get; }
         CaptchaConfig CaptchaConfig { get; }
         int BulkTransferStogareBuffer { get; }
         int BulkTransferSize { get; }
 
-        bool AutosnipeVerifiedOnly { get; }
-        int SnipePauseOnOutOfBallTime { get; }
-        int DefaultAutoSnipeCandy { get; }
-        int AutoSnipeBatchSize { get; }
-        GUIConfig UIConfig { get; }
         string DefaultBuddyPokemon { get; }
         bool AutoFinishTutorial { get;  }
         bool SkipFirstTimeTutorial { get; }
         bool SkipCollectingLevelUpRewards { get; }
         Dictionary<ItemId, ItemUseFilter> ItemUseFilters { get; }
         double UpgradePokemonLvlMinimum { get; }
-        int MinLevelForAutoSnipe { get;  }
 
         bool UseHumanlikeDelays { get; }
         int CatchSuccessDelay { get; }

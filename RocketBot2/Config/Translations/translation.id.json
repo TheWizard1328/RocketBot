@@ -1,38 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "humanWalkSnipePokemonEncountered",
-      "Value": "(Sambil jalan) Pokemon: {0} telah ditemukan! | Koordinat: {1}, {2} | Dihapus dari daftar filter."
-    },
-    {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(Sambil jalan) Jumlah PokeBall untuk mengaktifkan mode 'Sapu-Bersih' tidak cukup: ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(Sambil jalan) {0} terlihat! | Koordinat: {1}, {2} | Jarak {3:0.00} meter | Berakhir dalam {4:00} mnt {5:00} dtk | Waktu tempuh: {6:00} mnt {7:00} dtk | Kecepatan: {10:00.00} km/j | Singgah di PokeStop: {8} | Tangkap Pokemon lain: {9}"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(Sambil jalan) Ada {0} Pokemon yang cocok dengan daftar filtermu. Tidak akan dapat semua, tapi mencoba yang terbaik!"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(Sambil jalan) Kamu {0:0.0} meter jauhnya dari lokasi awal. Berjalan di lokasi ini dengan {1} PokeStop."
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(Sambil jalan) Sampai di lokasi | Koordinat: {0}, {1} | Tunggu: {2:0.00} detik"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Jumlah bidikan: {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Sniper harus diistirahatkan sebelum akun kamu kena Ban!"
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "Kamu menangkap terlalu cepat. Kamu tidak akan dapat menangkap hingga {0} detik lagi"
     },
@@ -247,10 +215,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "FARMING"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "BIDIK"
     },
     {
       "Key": "logEntryRecycling",
@@ -541,22 +505,6 @@
       "Value": "Kamu harus mengisi PtcUsername dan PtcPassword di auth.json!"
     },
     {
-      "Key": "snipeScan",
-      "Value": "Mencari Pokemon untuk dibidik pada koordinat: {0}"
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "Membidik: {0} | Nilai IV: {1} pada koordinat: {2}"
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "Tidak ditemukan Pokemon di koordinat tersebut!"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "Tidak cukup Pokeball untuk memulai bidikan! ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "Jurus 1"
     },
@@ -615,10 +563,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "Peningkatan level Pokemon gagal karena tidak cukup bahan"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "Server bidikan offline. Melewati..."
     },
     {
       "Key": "firstStartPrompt",

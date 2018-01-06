@@ -168,14 +168,9 @@ namespace PoGo.NecroBot.Logic.State
                 }
                 catch (ActiveSwitchByPokemonException rsae)
                 {
-                    if (rsae.Snipe && rsae.EncounterData != null)
-                        session.EventDispatcher.Send(new WarnEvent { Message = $"Detected a good pokemon with snipe {rsae.EncounterData.PokemonId.ToString()}   IV:{rsae.EncounterData.IV}  Move:{rsae.EncounterData.Move1}/ Move:{rsae.EncounterData.Move2}   LV: Move:{rsae.EncounterData.Level}" });
-                    else
-                    {
                         session.EventDispatcher.Send(new WarnEvent { Message = "Encountered a good pokemon, switch bots to catch him too." });
                         if (session.LogicSettings.NotificationConfig.EnablePushBulletNotification)
                             await PushNotificationClient.SendNotification(session, $"Switch bot account", $"Encountered a good pokemon, switch bots to catch him too.", true).ConfigureAwait(false);
-                    }
                     var CurrentAltitude = new GeoCoordinate(session.Client.ClientSession.Player.Latitude, session.Client.ClientSession.Player.Longitude).Altitude;
 
                     session.ReInitSessionWithNextBot(rsae.Bot, session.Client.ClientSession.Player.Latitude, session.Client.ClientSession.Player.Longitude, CurrentAltitude);

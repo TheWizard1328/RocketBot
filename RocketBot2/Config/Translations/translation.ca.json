@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
-    {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) Not enough Pokeballs to activate catch Em-All mode. ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(HUMAN WALK) Found {0} spawning | lat: {1}, lng: {2}, dist {3:0.00}m , expired in {4:00} min {5:00} sec | Walk time est : {6:00} min {7:00} sec | Spin: {8} | Catch : {9} | Speed : {10:0.00}km/h"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK) Found {0} pokemon matched with you filters. Human walking sniper won't catch em all, but will try to catch as many as possible"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK) You are {0:0.00m} away from nearest pokestop. Restart farming at this place with {1} pokestops"
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK) destination reached | lat: {0}, lng: {1} | wait  {3:0.00} sec"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Sniper count {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Sniper needs to take a rest before your account is banned"
-    },
-    {
+   {
       "Key": "CatchExceeds",
       "Value": "You are catching too fast. Your cannot catch another one until {0} seconds later"
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "FARMING"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "SNIPER"
     },
     {
       "Key": "logEntryRecycling",
@@ -506,22 +474,6 @@
       "Value": "És necessari omplir els camps PtcUsername i PtcPassword a l'arxiu auth.json!"
     },
     {
-      "Key": "snipeScan",
-      "Value": "Escanejant {0} en busca de Pokemons per snipejar..."
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "Snipejant a {0} amb {1} IV a {2}..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "No s'han trobat Pokemons per snipejar :("
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "No hi ha suficients Pokeballs per a iniciar l'Sniping! ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMOVE1Header",
       "Value": "MOVIMENT1"
     },
@@ -580,10 +532,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "Millora de Pokemon fallida. No hi ha recursos suficients."
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "El servidor d'sniping està fora de línia. Saltant..."
     },
     {
       "Key": "PokedexCatchedTelegram",

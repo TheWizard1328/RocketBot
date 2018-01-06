@@ -68,6 +68,7 @@
             this.wizardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wizardControl1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wizardControl1.Location = new System.Drawing.Point(0, 0);
+            this.wizardControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wizardControl1.Name = "wizardControl1";
             this.wizardControl1.Pages.Add(this.Step1);
             this.wizardControl1.Pages.Add(this.SavingGender_Page);
@@ -75,7 +76,7 @@
             this.wizardControl1.Pages.Add(this.Step2_2);
             this.wizardControl1.Pages.Add(this.Step3);
             this.wizardControl1.Pages.Add(this.Step3_3);
-            this.wizardControl1.Size = new System.Drawing.Size(421, 242);
+            this.wizardControl1.Size = new System.Drawing.Size(561, 298);
             this.wizardControl1.TabIndex = 0;
             this.wizardControl1.Text = "Setting";
             this.wizardControl1.Title = "Beginner Tutorial";
@@ -85,7 +86,7 @@
             this.Step1.Controls.Add(this.rdoFemale);
             this.Step1.Controls.Add(this.rdoMale);
             this.Step1.Name = "Step1";
-            this.Step1.Size = new System.Drawing.Size(374, 88);
+            this.Step1.Size = new System.Drawing.Size(514, 111);
             this.Step1.TabIndex = 0;
             this.Step1.Text = "Select  Gender";
             this.Step1.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.WizardPage1_Initialize);
@@ -93,9 +94,10 @@
             // rdoFemale
             // 
             this.rdoFemale.AutoSize = true;
-            this.rdoFemale.Location = new System.Drawing.Point(177, 39);
+            this.rdoFemale.Location = new System.Drawing.Point(236, 48);
+            this.rdoFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(63, 19);
+            this.rdoFemale.Size = new System.Drawing.Size(78, 24);
             this.rdoFemale.TabIndex = 1;
             this.rdoFemale.Text = "Female";
             this.rdoFemale.UseVisualStyleBackColor = true;
@@ -104,9 +106,10 @@
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.Checked = true;
-            this.rdoMale.Location = new System.Drawing.Point(89, 39);
+            this.rdoMale.Location = new System.Drawing.Point(119, 48);
+            this.rdoMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(51, 19);
+            this.rdoMale.Size = new System.Drawing.Size(63, 24);
             this.rdoMale.TabIndex = 0;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Male";
@@ -120,7 +123,7 @@
             this.SavingGender_Page.Controls.Add(this.label2);
             this.SavingGender_Page.Name = "SavingGender_Page";
             this.SavingGender_Page.ShowNext = false;
-            this.SavingGender_Page.Size = new System.Drawing.Size(374, 88);
+            this.SavingGender_Page.Size = new System.Drawing.Size(499, 108);
             this.SavingGender_Page.TabIndex = 3;
             this.SavingGender_Page.Text = "Working in progress";
             this.SavingGender_Page.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.WizardPage4_Initialize);
@@ -128,18 +131,20 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::PoGo.NecroBot.Logic.Properties.Resources.ajax_loader;
-            this.pictureBox3.Location = new System.Drawing.Point(98, 28);
+            this.pictureBox3.Location = new System.Drawing.Point(131, 34);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 33);
+            this.pictureBox3.Size = new System.Drawing.Size(39, 41);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 28);
+            this.label2.Location = new System.Drawing.Point(192, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Please wait........";
             // 
@@ -152,7 +157,7 @@
             this.Step2.Controls.Add(this.rdoBulbasaur);
             this.Step2.Name = "Step2";
             this.Step2.ShowCancel = false;
-            this.Step2.Size = new System.Drawing.Size(374, 88);
+            this.Step2.Size = new System.Drawing.Size(499, 108);
             this.Step2.TabIndex = 1;
             this.Step2.Text = "First Catch";
             this.Step2.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.WizardPage2_Initialize);
@@ -160,9 +165,10 @@
             // rdoCharmander
             // 
             this.rdoCharmander.AutoSize = true;
-            this.rdoCharmander.Location = new System.Drawing.Point(131, 34);
+            this.rdoCharmander.Location = new System.Drawing.Point(175, 42);
+            this.rdoCharmander.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoCharmander.Name = "rdoCharmander";
-            this.rdoCharmander.Size = new System.Drawing.Size(91, 19);
+            this.rdoCharmander.Size = new System.Drawing.Size(111, 24);
             this.rdoCharmander.TabIndex = 2;
             this.rdoCharmander.Text = "Charmander";
             this.rdoCharmander.UseVisualStyleBackColor = true;
@@ -170,9 +176,10 @@
             // rdoSquirtle
             // 
             this.rdoSquirtle.AutoSize = true;
-            this.rdoSquirtle.Location = new System.Drawing.Point(250, 34);
+            this.rdoSquirtle.Location = new System.Drawing.Point(333, 42);
+            this.rdoSquirtle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoSquirtle.Name = "rdoSquirtle";
-            this.rdoSquirtle.Size = new System.Drawing.Size(61, 19);
+            this.rdoSquirtle.Size = new System.Drawing.Size(81, 24);
             this.rdoSquirtle.TabIndex = 1;
             this.rdoSquirtle.Text = "Squirtle";
             this.rdoSquirtle.UseVisualStyleBackColor = true;
@@ -181,9 +188,10 @@
             // 
             this.rdoBulbasaur.AutoSize = true;
             this.rdoBulbasaur.Checked = true;
-            this.rdoBulbasaur.Location = new System.Drawing.Point(19, 34);
+            this.rdoBulbasaur.Location = new System.Drawing.Point(25, 42);
+            this.rdoBulbasaur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoBulbasaur.Name = "rdoBulbasaur";
-            this.rdoBulbasaur.Size = new System.Drawing.Size(77, 19);
+            this.rdoBulbasaur.Size = new System.Drawing.Size(95, 24);
             this.rdoBulbasaur.TabIndex = 0;
             this.rdoBulbasaur.TabStop = true;
             this.rdoBulbasaur.Text = "Bulbasaur";
@@ -196,7 +204,7 @@
             this.Step2_2.Controls.Add(this.pictureBox2);
             this.Step2_2.Controls.Add(this.label3);
             this.Step2_2.Name = "Step2_2";
-            this.Step2_2.Size = new System.Drawing.Size(374, 88);
+            this.Step2_2.Size = new System.Drawing.Size(499, 108);
             this.Step2_2.TabIndex = 2;
             this.Step2_2.Text = "Working in progress";
             this.Step2_2.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.WizardPage3_Initialize);
@@ -204,18 +212,20 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PoGo.NecroBot.Logic.Properties.Resources.ajax_loader;
-            this.pictureBox2.Location = new System.Drawing.Point(93, 32);
+            this.pictureBox2.Location = new System.Drawing.Point(124, 39);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(39, 33);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 32);
+            this.label3.Location = new System.Drawing.Point(189, 39);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 15);
+            this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Please wait........";
             // 
@@ -225,7 +235,7 @@
             this.Step3.Controls.Add(this.label1);
             this.Step3.Controls.Add(this.txtNick);
             this.Step3.Name = "Step3";
-            this.Step3.Size = new System.Drawing.Size(374, 88);
+            this.Step3.Size = new System.Drawing.Size(499, 108);
             this.Step3.TabIndex = 4;
             this.Step3.Text = "Select Nickname";
             this.Step3.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.WizardPage5_Initialize);
@@ -234,9 +244,10 @@
             // 
             this.lblNameError.AutoSize = true;
             this.lblNameError.ForeColor = System.Drawing.Color.Red;
-            this.lblNameError.Location = new System.Drawing.Point(10, 48);
+            this.lblNameError.Location = new System.Drawing.Point(13, 59);
+            this.lblNameError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameError.Name = "lblNameError";
-            this.lblNameError.Size = new System.Drawing.Size(32, 15);
+            this.lblNameError.Size = new System.Drawing.Size(41, 20);
             this.lblNameError.TabIndex = 2;
             this.lblNameError.Text = "error";
             this.lblNameError.UseWaitCursor = true;
@@ -245,18 +256,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 16);
+            this.label1.Location = new System.Drawing.Point(13, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 15);
+            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nickname";
             this.label1.UseWaitCursor = true;
             // 
             // txtNick
             // 
-            this.txtNick.Location = new System.Drawing.Point(77, 16);
+            this.txtNick.Location = new System.Drawing.Point(103, 20);
+            this.txtNick.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtNick.Name = "txtNick";
-            this.txtNick.Size = new System.Drawing.Size(248, 23);
+            this.txtNick.Size = new System.Drawing.Size(329, 27);
             this.txtNick.TabIndex = 0;
             // 
             // Step3_3
@@ -265,7 +278,7 @@
             this.Step3_3.Controls.Add(this.pictureBox1);
             this.Step3_3.Controls.Add(this.label4);
             this.Step3_3.Name = "Step3_3";
-            this.Step3_3.Size = new System.Drawing.Size(374, 88);
+            this.Step3_3.Size = new System.Drawing.Size(499, 108);
             this.Step3_3.TabIndex = 5;
             this.Step3_3.Text = "Working ‌ in progress";
             this.Step3_3.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.WizardPage6_Initialize);
@@ -273,29 +286,32 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PoGo.NecroBot.Logic.Properties.Resources.ajax_loader;
-            this.pictureBox1.Location = new System.Drawing.Point(86, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(115, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(39, 41);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(121, 12);
+            this.label4.Location = new System.Drawing.Point(161, 15);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 15);
+            this.label4.Size = new System.Drawing.Size(107, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Please wait........";
             // 
             // InitialTutorialForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 242);
+            this.ClientSize = new System.Drawing.Size(561, 298);
             this.Controls.Add(this.wizardControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InitialTutorialForm";
             this.Text = "Initial Account Tutorial";
             this.TopMost = true;

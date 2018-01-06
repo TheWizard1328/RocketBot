@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) Not enough Pokeballs to activate catch Em-All mode. ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(HUMAN WALK) Found {0} spawning | lat: {1}, lng: {2}, dist {3:0.00}m , expired in {4:00} min {5:00} sec | Walk time est : {6:00} min {7:00} sec | Spin: {8} | Catch : {9} | Speed : {10:0.00}km/h"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK) Found {0} pokemon matched with you filters. Human walking sniper won't catch em all, but will try to catch as many as possible"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK) You are {0:0.00m} away from nearest pokestop. Restart farming at this place with {1} pokestops"
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK) destination reached | lat: {0}, lng: {1} | wait  {3:0.00} sec"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Sniper count {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Sniper needs to take a rest before your account is banned"
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "You are catching too fast. Your cannot catch another one until {0} seconds later"
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "挂机"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "追捕"
     },
     {
       "Key": "logEntryRecycling",
@@ -533,22 +501,6 @@
       "Value": "您需要在auth.json中填写PTC账号和密码!\t\t"
     },
     {
-      "Key": "snipeScan",
-      "Value": "正在查找可追捕的神奇宝贝,坐标:{0}\t\t"
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "正在追捕 {0} 完美度:{1},坐标{2}...\t\t"
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "没有发现可追捕的神奇宝贝!\t\t"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "没有足够的宝贝球用来追捕!({0}/{1})\t\t"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "快速技"
     },
@@ -607,10 +559,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "神奇宝贝强化失败,材料不足\t\t"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "追捕服务器当前关闭.跳过追捕....\t\t"
     },
     {
       "Key": "firstStartPrompt",

@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) Não há pokebolas suficiente ara iniciar captura ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(HUMAN WALK SNIPE) Encontrou {0} desova | lat: {1}, lng: {2}, dist {3:0.00}m, expira em {05:00} min {04:00} seg | Tempo de caminhada estimado: {07:00} min {06:00} sec | Spin: {8} | Captura: {9}"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK SNIPE) Encontrado {0} de acordo com o filtro. Human walking sniper não vai capturar todos, mas vai tentar capturar o máximo possível"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK SNIPE) Você {0:0.00m} do pokestop mais próximo. Reiniciar farm neste lugar com {1} pokestops"
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK SNIPE) Destino alcançado | lat: {0}, lng: {1}"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Contagem sniper {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Sniper precisa descansar um pouco antes de sua conta ser banida"
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "Você está capturando muito rápido. Você não pode pegar outro em {0} segundos"
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "FARMANDO"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "CAPTURA"
     },
     {
       "Key": "logEntryRecycling",
@@ -505,22 +473,6 @@
       "Value": "Você precisa informar o PtcUsername e PtcPassword no arquivo auth.json!"
     },
     {
-      "Key": "snipeScan",
-      "Value": "[Captura] Verificando por Pokémon em {0}..."
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "[Captura] Tentando Capturar um {0} com {1} IV em {2}..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "[Captura] Nenhum Pokémon encontrado!"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "Sem pokébolas suficientes para começar a captura! ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "Ataque Básico"
     },
@@ -580,11 +532,7 @@
       "Key": "pkmNotEnoughRessources",
       "Value": "Fortalecimento do Pokemon falhado, sem recursos suficientes."
     },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "Servidor de Captura está offline. Pulando..."
-    },
-    {
+  {
       "Key": "firstStartPrompt",
       "Value": "Essa é a primeira vez que inicia o programa, gostaria de começar a configuração agora? {0}/{1}"
     },

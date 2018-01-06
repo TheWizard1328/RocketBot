@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) Non abbastanza pokeball per attivare la modalità Catch'em all! ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(HUMAN WALK) È comparso un {0} | lat: {1}, lng: {2}, dist {3:0.00}m , scomparirà tra {4:00} min {5:00} sec | Tempo di camminata stimato : {6:00} min {7:00} sec | Spin: {8} | Cattura : {9}"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK) Trovati {0} pokemon che combaciano con i filtri. Human walk sniper non li catturerà tutti, ma cercherà di trovarne comunque il più possibile."
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK) Sei lontano {0:0.00m} dal pokestop più vicino. Ritornando a farmare in questo posto con {1} pokestop."
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK) Destinazione raggiunta | lat: {0}, lng: {1}"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Numero di snipes: {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Lo sniper è stato disattivato in quanto potrebbe far bannare l'account."
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "Stai catturando pokemon troppo velocemente. Aspettando altri {0} secondi prima di catturarne altri."
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "FARMING"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "SNIPER"
     },
     {
       "Key": "logEntryRecycling",
@@ -505,22 +473,6 @@
       "Value": "Devi riempire i campi PtcUsername e PtcPassword nel file auth.json!"
     },
     {
-      "Key": "snipeScan",
-      "Value": "[Sniper] Scansione Pokémon per lo snipe a {0}.."
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "Sniping un {0} con {1} IV a {2}..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "Nessun Pokémon trovato per lo sniping!"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "Pokéball insufficienti per iniziare lo sniping! ({0}/{1})"
-    },
-    {
       "Key": "DisplayHighestMove1Header",
       "Value": "Mossa1"
     },
@@ -579,10 +531,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "Potenziamento Pokemon Fallito: Risorse Insufficienti"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "Il server di Sniping è offline. Saltando..."
     },
     {
       "Key": "PokedexCatchedTelegram",

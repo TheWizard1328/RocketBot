@@ -72,7 +72,6 @@ namespace RocketBot2
                 { LogLevel.Warning, Color.FromArgb(255, 128, 128, 0) } ,
                 { LogLevel.Pokestop, Color.Cyan }  ,
                 { LogLevel.Farming, Color.Magenta },
-                { LogLevel.Sniper, Color.White },
                 { LogLevel.Recycling, Color.DarkMagenta },
                 { LogLevel.Flee, Color.FromArgb(255, 128, 128, 0) },
                 { LogLevel.Transfer, Color.DarkGreen },

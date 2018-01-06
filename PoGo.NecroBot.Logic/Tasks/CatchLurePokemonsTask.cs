@@ -34,20 +34,6 @@ namespace PoGo.NecroBot.Logic.Tasks
             if (!session.LogicSettings.CatchPokemon ||
                 session.CatchBlockTime > DateTime.Now) return;
 
-            if (session.KnownLongitudeBeforeSnipe != 0 && session.KnownLatitudeBeforeSnipe != 0 &&
-                LocationUtils.CalculateDistanceInMeters(session.KnownLatitudeBeforeSnipe,
-                session.KnownLongitudeBeforeSnipe,
-                session.Client.ClientSession.Player.Latitude,
-                session.Client.ClientSession.Player.Longitude) > 1000)
-            {
-                Logger.Write($"ERROR - Bot is stuck at snipe location({session.Client.ClientSession.Player.Latitude},{session.Client.ClientSession.Player.Longitude}). Teleport him back home - if you see this message please PM samuraitruong on Discord");
-
-                var elevation = new GeoCoordinate (session.KnownLatitudeBeforeSnipe, session.KnownLongitudeBeforeSnipe).Altitude;
-                session.Client.ClientSession.Player.SetCoordinates(session.KnownLatitudeBeforeSnipe, session.KnownLongitudeBeforeSnipe, elevation);
-                return;
-            }
-
-
             Logger.Write(session.Translation.GetTranslation(TranslationString.LookingForLurePokemon), LogLevel.Debug);
 
             var pokemonId = currentFortData.LureInfo.ActivePokemonId;

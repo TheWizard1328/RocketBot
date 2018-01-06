@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(PODRÓŻ) Niewystarczająca ilość Pokeballi do aktywacji trybu Catch 'em All. ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(PODRÓŻ) Znaleziono {0} spawnów | szer.: {1}, dł.: {2}, odległość {3:0.00}m , utrata ważności po {4:00} min {5:00} sec | Przewidywany czas dotarcia : {6:00} min {7:00} sec | Obroty: {8} | Złapano : {9}"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(PODRÓŻ) Znaleziono {0} pokemonów pasujących do twoich wymagań. Snajper nie zdoła złapać wszystkich pokemonów, ale spróbuje złapać maksymalną możliwą ilość."
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(PODRÓŻ) Jesteś oddalony {0:0.00m} od najbliższego pokestopu. Restart farmienia w tym miejscu z {1} Pokestopami"
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(PODRÓŻ) Cel osiągnięty | szer.: {0}, dł.: {1} | czekaj  {3:0.00} sek"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Licznik snajpera: {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Snajper musi zrobić sobie przerwę, bo inaczej konto może zostać zablokowane."
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "Łapiesz pokemony za szybko. Nie możesz złapać kolejnego dopiero po {0} sekundach"
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "FARMENIE"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "SNAJPER"
     },
     {
       "Key": "logEntryRecycling",
@@ -533,22 +501,6 @@
       "Value": "Wprowadź nazwę użytkownika (PtcUsername) oraz hasło (PtcPassword) w 'auth.json'."
     },
     {
-      "Key": "snipeScan",
-      "Value": "Skanowanie w poszukiwaniu Pokemonów [{0}]..."
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "Mam na celowniku {0}  IV: {1} [{2}]..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "Nie znaleziono żadnego Pokemona."
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "Zbyt mało Pokeballi ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "ATAK 1"
     },
@@ -607,10 +559,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "Ulepszanie Pokemona nie powiodło się. Zbyt mało zasobów."
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "Serwer jest wyłączony. Pomijam..."
     },
     {
       "Key": "firstStartPrompt",

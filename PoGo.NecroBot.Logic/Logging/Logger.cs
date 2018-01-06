@@ -105,10 +105,6 @@ namespace PoGo.NecroBot.Logic.Logging
                     Console.ForegroundColor = color == ConsoleColor.Black ? ConsoleColor.Magenta : color;
                     finalMessage = $"[{DateTime.Now.ToString("HH:mm:ss")}] ({LoggingStrings.Farming}) {message}";
                     break;
-                case LogLevel.Sniper:
-                    Console.ForegroundColor = color == ConsoleColor.Black ? ConsoleColor.White : color;
-                    finalMessage = $"[{DateTime.Now.ToString("HH:mm:ss")}] ({LoggingStrings.Sniper}) {message}";
-                    break;
                 case LogLevel.Recycling:
                     Console.ForegroundColor = color == ConsoleColor.Black ? ConsoleColor.DarkMagenta : color;
                     finalMessage = $"[{DateTime.Now.ToString("HH:mm:ss")}] ({LoggingStrings.Recycling}) {message}";
@@ -231,23 +227,22 @@ namespace PoGo.NecroBot.Logic.Logging
         Warning = 2,
         Pokestop = 3,
         Farming = 4,
-        Sniper = 5,
-        Recycling = 6,
-        Berry = 7,
-        Caught = 8,
-        Flee = 9,
-        Transfer = 10,
-        Evolve = 11,
-        Egg = 12,
-        Update = 13,
-        Info = 14,
-        New = 15,
-        SoftBan = 16,
-        LevelUp = 17,
-        BotStats = 18,
-        Gym = 19,
-        GymDisk = 20,
-        Service = 21,
-        Debug = 22
+        Recycling = 5,
+        Berry = 6,
+        Caught = 7,
+        Flee = 8,
+        Transfer = 9,
+        Evolve = 10,
+        Egg = 11,
+        Update = 12,
+        Info = 13,
+        New = 14,
+        SoftBan = 15,
+        LevelUp = 16,
+        BotStats = 17,
+        Gym = 18,
+        GymDisk = 19,
+        Service = 20,
+        Debug = 21
     }
 }

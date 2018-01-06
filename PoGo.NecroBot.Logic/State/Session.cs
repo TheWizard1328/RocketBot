@@ -52,8 +52,6 @@ namespace PoGo.NecroBot.Logic.State
         DateTime CatchBlockTime { get; set; }
         Statistics RuntimeStatistics { get; }
         GymTeamState GymState { get; set; }
-        double KnownLatitudeBeforeSnipe { get; set; }
-        double KnownLongitudeBeforeSnipe { get; set; }
         bool SaveBallForByPassCatchFlee { set; get; }
     }
 
@@ -94,8 +92,6 @@ namespace PoGo.NecroBot.Logic.State
             Translation = translation;
             Reset(settings, LogicSettings);
             Stats = new SessionStats(this);
-
-            AnalyticsService = new AnalyticsService();
             
             accounts.AddRange(logicSettings.Bots);
             if (!accounts.Any(x => x.AuthType == settings.AuthType && x.Username == settings.Username))
@@ -142,7 +138,6 @@ namespace PoGo.NecroBot.Logic.State
         public TelegramService Telegram { get; set; }
         public SessionStats Stats { get; set; }
         public IElevationService ElevationService { get; set; }
-        public AnalyticsService AnalyticsService { get; set; }
         public CancellationTokenSource CancellationTokenSource { get; set; }
         public MemoryCache Cache { get; set; }
 
@@ -157,8 +152,6 @@ namespace PoGo.NecroBot.Logic.State
 
         public void Reset(ISettings settings, ILogicSettings logicSettings)
         {
-            KnownLatitudeBeforeSnipe = 0;
-            KnownLongitudeBeforeSnipe = 0;
             if(GlobalSettings.Auth.DeviceConfig.UseRandomDeviceId)
             {
                 settings.DeviceId = DeviceConfig.GetDeviceId(settings.Username);
@@ -183,7 +176,6 @@ namespace PoGo.NecroBot.Logic.State
         public bool ReInitSessionWithNextBot(Account bot = null, double lat = 0, double lng = 0, double att = 0)
         {
             CatchBlockTime = DateTime.Now; //remove any block
-            MSniperServiceTask.BlockSnipe();
             VisibleForts.Clear();
             Forts.Clear();
 
@@ -277,8 +269,5 @@ namespace PoGo.NecroBot.Logic.State
             return false; //timedout
         }
         public GymTeamState GymState { get; set; }
-
-        public double KnownLatitudeBeforeSnipe { get; set; }
-        public double KnownLongitudeBeforeSnipe { get; set; }
     }
 }

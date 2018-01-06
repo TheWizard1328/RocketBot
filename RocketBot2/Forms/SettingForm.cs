@@ -52,7 +52,6 @@ namespace RocketBot2.Forms
                 clbTransfer.Items.Add(pokemon);
                 clbPowerUp.Items.Add(pokemon);
                 clbEvolve.Items.Add(pokemon);
-                clbSnipePokemonFilter.Items.Add(pokemon);
             }
 
             var zones = new TimeZoneIds().GetTimeZoneIds();
@@ -215,12 +214,7 @@ namespace RocketBot2.Forms
                 clbCatchIgnore.SetItemChecked(clbCatchIgnore.FindStringExact(poke.ToString()), true);
             }
 
-            foreach (var poke in _settings.SnipePokemonFilter)
-            {
-                clbSnipePokemonFilter.SetItemChecked(clbSnipePokemonFilter.FindStringExact(poke.Key.ToString()), true);
-            }
             gbCatchIgnore.Text = $"Ignore({clbCatchIgnore.CheckedItems.Count}/{clbCatchIgnore.Items.Count})";
-            gbSnipe.Text = $"Snipe({clbSnipePokemonFilter.CheckedItems.Count}/{clbSnipePokemonFilter.Items.Count})";
 
             #endregion
 
@@ -345,9 +339,6 @@ namespace RocketBot2.Forms
             tbForceExcellentThrowOverIv.Text = _settings.CustomCatchConfig.ForceExcellentThrowOverIv.ToString(CultureInfo.InvariantCulture);
             tbForceGreatThrowOverCp.Text = _settings.CustomCatchConfig.ForceGreatThrowOverCp.ToString();
             tbForceExcellentThrowOverCp.Text = _settings.CustomCatchConfig.ForceExcellentThrowOverCp.ToString();
-            cbAutoSniper.Checked = _settings.DataSharingConfig.AutoSnipe;
-            tbDataServiceIdentification.Text = _settings.DataSharingConfig.DataServiceIdentification;
-            cbEnableSyncData.Checked = _settings.DataSharingConfig.EnableSyncData;
             cbEnableGyms.Checked = _settings.GymConfig.Enable;
             cBoxTeamColor.Text = _settings.GymConfig.DefaultTeam;
             cbUseHumanlikeDelays.Checked = _settings.HumanlikeDelays.UseHumanlikeDelays;
@@ -432,18 +423,6 @@ namespace RocketBot2.Forms
                     filter = new EvolveFilter();
                 }
                 results.Add(i, filter);
-            }
-            return results;
-        }
-
-        private static Dictionary<PokemonId, SnipeFilter> SnipeFilterConvertClbDictionary(CheckedListBox input)
-        {
-            var x = input.CheckedItems.Cast<PokemonId>().ToList();
-            var results = new Dictionary<PokemonId, SnipeFilter>();
-            foreach (var i in x)
-            {
-                var y = new SnipeFilter();
-                results.Add(i, y);
             }
             return results;
         }
@@ -686,7 +665,6 @@ namespace RocketBot2.Forms
                     Convert.ToDouble(tbUseMasterBallBelowCatchProbability.Text);
                 _settings.PokemonConfig.UseLimitedEggIncubators = cbUseLimitedEggIncubators.Checked;
                 _settings.PokemonConfig.AutoFavoriteShinyOnCatch = cbAutoFavoriteShinyOnCatch.Checked;
-                _settings.SnipePokemonFilter = SnipeFilterConvertClbDictionary(clbSnipePokemonFilter);
 
                 #endregion
 
@@ -785,9 +763,6 @@ namespace RocketBot2.Forms
                 _settings.CustomCatchConfig.ForceExcellentThrowOverCp = Convert.ToInt32(tbForceExcellentThrowOverCp.Text);
                 _settings.GymConfig.Enable = cbEnableGyms.Checked;
                 _settings.GymConfig.DefaultTeam = cBoxTeamColor.Text;
-                _settings.DataSharingConfig.AutoSnipe = cbAutoSniper.Checked;
-                _settings.DataSharingConfig.DataServiceIdentification = tbDataServiceIdentification.Text;
-                _settings.DataSharingConfig.EnableSyncData = cbEnableSyncData.Checked;
                 _settings.HumanlikeDelays.UseHumanlikeDelays = cbUseHumanlikeDelays.Checked;
                 _settings.PlayerConfig.AutoWalkAI = cbAutoWalkAI.Checked;
                 _settings.PlayerConfig.AutoWalkDist = Convert.ToInt32(tbAutoWalkKM.Text);
@@ -947,11 +922,6 @@ namespace RocketBot2.Forms
         private void CbSelectAllEvolve_CheckedChanged(object sender, EventArgs e)
         {
             ListSelectAllHandler(clbEvolve, cbEvolveAll.Checked);
-        }
-
-        private void CbSelectAllSnipePokemonFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            ListSelectAllHandler(clbSnipePokemonFilter, cbSnipePokemonFilterAll.Checked);
         }
 
         private void CbSelectAllCatch_CheckedChanged(object sender, EventArgs e)

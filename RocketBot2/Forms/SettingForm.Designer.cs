@@ -225,10 +225,6 @@
             this.cbTriggerEvolveOnStorageUsagePercentage = new System.Windows.Forms.CheckBox();
             this.gbEvolve = new System.Windows.Forms.GroupBox();
             this.clbEvolve = new System.Windows.Forms.CheckedListBox();
-            this.tabSnipePokemonFilter = new System.Windows.Forms.TabPage();
-            this.gbSnipe = new System.Windows.Forms.GroupBox();
-            this.clbSnipePokemonFilter = new System.Windows.Forms.CheckedListBox();
-            this.cbSnipePokemonFilterAll = new System.Windows.Forms.CheckBox();
             this.tabItems = new System.Windows.Forms.TabPage();
             this.cbUseIncenseConstantly = new System.Windows.Forms.CheckBox();
             this.cbUseLuckyEggConstantly = new System.Windows.Forms.CheckBox();
@@ -321,7 +317,6 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.Config = new System.Windows.Forms.TreeView();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.cbAutoSniper = new System.Windows.Forms.CheckBox();
             this.cbEnableGyms = new System.Windows.Forms.CheckBox();
             this.label48 = new System.Windows.Forms.Label();
             this.tbDataServiceIdentification = new System.Windows.Forms.TextBox();
@@ -359,8 +354,6 @@
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.gbEvolve.SuspendLayout();
-            this.tabSnipePokemonFilter.SuspendLayout();
-            this.gbSnipe.SuspendLayout();
             this.tabItems.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
@@ -1470,7 +1463,6 @@
             this.tcPokemonDetail.Controls.Add(this.tabTransfer);
             this.tcPokemonDetail.Controls.Add(this.tabPowerUp);
             this.tcPokemonDetail.Controls.Add(this.tabEvo);
-            this.tcPokemonDetail.Controls.Add(this.tabSnipePokemonFilter);
             this.tcPokemonDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPokemonDetail.Location = new System.Drawing.Point(0, 0);
             this.tcPokemonDetail.Margin = new System.Windows.Forms.Padding(2);
@@ -2713,57 +2705,6 @@
             this.clbEvolve.Size = new System.Drawing.Size(334, 504);
             this.clbEvolve.TabIndex = 0;
             // 
-            // tabSnipePokemonFilter
-            // 
-            this.tabSnipePokemonFilter.BackColor = System.Drawing.SystemColors.Control;
-            this.tabSnipePokemonFilter.Controls.Add(this.gbSnipe);
-            this.tabSnipePokemonFilter.Location = new System.Drawing.Point(4, 29);
-            this.tabSnipePokemonFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.tabSnipePokemonFilter.Name = "tabSnipePokemonFilter";
-            this.tabSnipePokemonFilter.Padding = new System.Windows.Forms.Padding(2);
-            this.tabSnipePokemonFilter.Size = new System.Drawing.Size(946, 452);
-            this.tabSnipePokemonFilter.TabIndex = 5;
-            this.tabSnipePokemonFilter.Text = "SnipePokemonFilter";
-            // 
-            // gbSnipe
-            // 
-            this.gbSnipe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gbSnipe.Controls.Add(this.clbSnipePokemonFilter);
-            this.gbSnipe.Controls.Add(this.cbSnipePokemonFilterAll);
-            this.gbSnipe.Location = new System.Drawing.Point(602, 8);
-            this.gbSnipe.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
-            this.gbSnipe.Name = "gbSnipe";
-            this.gbSnipe.Padding = new System.Windows.Forms.Padding(2, 5, 2, 5);
-            this.gbSnipe.Size = new System.Drawing.Size(338, 534);
-            this.gbSnipe.TabIndex = 17;
-            this.gbSnipe.TabStop = false;
-            this.gbSnipe.Text = "Snipe";
-            // 
-            // clbSnipePokemonFilter
-            // 
-            this.clbSnipePokemonFilter.CheckOnClick = true;
-            this.clbSnipePokemonFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clbSnipePokemonFilter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clbSnipePokemonFilter.FormattingEnabled = true;
-            this.clbSnipePokemonFilter.Location = new System.Drawing.Point(2, 25);
-            this.clbSnipePokemonFilter.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
-            this.clbSnipePokemonFilter.Name = "clbSnipePokemonFilter";
-            this.clbSnipePokemonFilter.Size = new System.Drawing.Size(334, 504);
-            this.clbSnipePokemonFilter.TabIndex = 0;
-            // 
-            // cbSnipePokemonFilterAll
-            // 
-            this.cbSnipePokemonFilterAll.AutoSize = true;
-            this.cbSnipePokemonFilterAll.Location = new System.Drawing.Point(162, 0);
-            this.cbSnipePokemonFilterAll.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSnipePokemonFilterAll.Name = "cbSnipePokemonFilterAll";
-            this.cbSnipePokemonFilterAll.Size = new System.Drawing.Size(93, 24);
-            this.cbSnipePokemonFilterAll.TabIndex = 0;
-            this.cbSnipePokemonFilterAll.Text = "Select All";
-            this.cbSnipePokemonFilterAll.UseVisualStyleBackColor = true;
-            this.cbSnipePokemonFilterAll.CheckedChanged += new System.EventHandler(this.CbSelectAllSnipePokemonFilter_CheckedChanged);
-            // 
             // tabItems
             // 
             this.tabItems.BackColor = System.Drawing.SystemColors.Control;
@@ -3796,18 +3737,6 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // cbAutoSniper
-            // 
-            this.cbAutoSniper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbAutoSniper.AutoSize = true;
-            this.cbAutoSniper.Location = new System.Drawing.Point(18, 522);
-            this.cbAutoSniper.Margin = new System.Windows.Forms.Padding(2);
-            this.cbAutoSniper.Name = "cbAutoSniper";
-            this.cbAutoSniper.Size = new System.Drawing.Size(167, 24);
-            this.cbAutoSniper.TabIndex = 33;
-            this.cbAutoSniper.Text = "Activate Auto Sniper";
-            this.cbAutoSniper.UseVisualStyleBackColor = true;
-            // 
             // cbEnableGyms
             // 
             this.cbEnableGyms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -3881,7 +3810,6 @@
             this.Controls.Add(this.tbDataServiceIdentification);
             this.Controls.Add(this.label48);
             this.Controls.Add(this.cbEnableGyms);
-            this.Controls.Add(this.cbAutoSniper);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.saveBtn);
@@ -3951,9 +3879,6 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.gbEvolve.ResumeLayout(false);
-            this.tabSnipePokemonFilter.ResumeLayout(false);
-            this.gbSnipe.ResumeLayout(false);
-            this.gbSnipe.PerformLayout();
             this.tabItems.ResumeLayout(false);
             this.tabItems.PerformLayout();
             this.groupBox14.ResumeLayout(false);
@@ -4180,7 +4105,6 @@
         private System.Windows.Forms.Label GoogleApiLabel;
         private System.Windows.Forms.CheckBox cbShowWalkingSpeed;
         private System.Windows.Forms.CheckBox cbUseWalkingSpeedVariant;
-        private System.Windows.Forms.CheckBox cbAutoSniper;
         private System.Windows.Forms.CheckBox cbEnableGyms;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox tbDataServiceIdentification;
@@ -4200,8 +4124,6 @@
         private System.Windows.Forms.CheckBox cbAutoFavoriteShinyOnCatch;
         private System.Windows.Forms.CheckBox cbUseLimitedEggIncubators;
         private System.Windows.Forms.ComboBox cBoxTeamColor;
-        private System.Windows.Forms.TabPage tabSnipePokemonFilter;
-        private System.Windows.Forms.CheckBox cbSnipePokemonFilterAll;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.CheckBox cbStartFromLastPosition;
         private System.Windows.Forms.SplitContainer splitContainer4;
@@ -4218,8 +4140,6 @@
         private System.Windows.Forms.GroupBox gbCatchPokemon;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox20;
-        private System.Windows.Forms.GroupBox gbSnipe;
-        private System.Windows.Forms.CheckedListBox clbSnipePokemonFilter;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox tbAutoWalkKM;

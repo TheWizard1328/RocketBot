@@ -232,11 +232,7 @@
       "Key": "logEntryFarming",
       "Value": "FARMING"
     },
-    {
-      "Key": "logEntrySniper",
-      "Value": "SNIPER"
-    },
-    {
+   {
       "Key": "logEntryRecycling",
       "Value": "RECYCLING"
     },
@@ -585,26 +581,6 @@
       "Value": "You need to fill out PtcUsername and PtcPassword in auth.json!"
     },
     {
-      "Key": "snipeScan",
-      "Value": "Scanning for Snipeable Pokemon at {0}..."
-    },
-    {
-      "Key": "snipePokemonNotInPokedex",
-      "Value": "Auto sniper detected a pokemon not in your pokedex:  {0}. He will be snipped as priority!"
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "Sniping a {0} with {1} IV at {2}..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "Did not find a Pokemon within the Location, pokemon despawned?"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "Not enough Pokeballs to start sniping! ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "MOVE1"
     },
@@ -663,10 +639,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "Pokemon Upgrade Failed Not Enough Resources"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "Sniping server is offline. Skipping..."
     },
     {
       "Key": "firstStartPrompt",
@@ -953,18 +925,6 @@
       "Value": "Player below level 20, saving this 10 km Egg for later"
     },
     {
-      "Key": "autoSnipeDisabled",
-      "Value": "Your are out of PokeBalls because of sniping pretty fast, you can reduce sniping speed by updating MinIVForAutoSnipe or SnipePokemonFilters, Auto snipe will be disabled in {0} mins"
-    },
-    {
-      "Key": "sniperCount",
-      "Value": "Sniper count {0}"
-    },
-    {
-      "Key": "snipeExceeds",
-      "Value": "Sniper needs to take a rest before your account is banned"
-    },
-    {
       "Key": "catchExceeds",
       "Value": "You are catching too fast. Your cannot catch another one until {0} seconds later"
     },
@@ -991,30 +951,6 @@
     {
       "Key": "exitDueToLimitsReached",
       "Value": "We have reached both the user defined max Pokestops/max duration and caught max Pokemons/max duration. Time to take a break. Exiting."
-    },
-    {
-      "Key": "humanWalkSnipe",
-      "Value": "(HUMAN WALK) Found {0} spawning | lat: {1}, lng: {2}, dist {3:0.00}m , expired in {4:00} min {5:00} sec | Estimate : {6:00} min {7:00} sec | Allow spin: {8} | Allow catch : {9} | Speed {10:0.00}km/h"
-    },
-    {
-      "Key": "humanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK) Found {0} pokemon matched with you filters. Human walking sniper won't catch em all. but try to maximun catch if possible."
-    },
-    {
-      "Key": "humanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK) You are {0:0.00m} away from nearest pokestop. Restart farming at this place with {1} pokestops."
-    },
-    {
-      "Key": "humanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK) destination reached | lat: {0}, lng: {1} | wait :{2:0.00} sec"
-    },
-    {
-      "Key": "humanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) Not enough Pokeballs to activate catch Em-All mode. ({0})/{1}"
-    },
-    {
-      "Key": "humanWalkSnipePokemonEncountered",
-      "Value": "(HUMAN WALK) Encountered {0}  | lat :{1} , Lng : {2} | removed from snipping list"
     },
     {
       "Key": "minimumClientVersionException",
@@ -1089,10 +1025,6 @@
       "Value": "Restart Bot"
     },
     {
-      "Key": "telegramCommandSnipeDescription",
-      "Value": "Perform snipe"
-    },
-    {
       "Key": "telegramCommandStatusDescription",
       "Value": "Shows bot runtime stats"
     },
@@ -1143,10 +1075,6 @@
     {
       "Key": "telegramCommandRestartMsgHead",
       "Value": "Restarting ... Current account is {0}"
-    },
-    {
-      "Key": "telegramCommandSnipeMsgHead",
-      "Value": "Snipe accepted for user {0}"
     },
     {
       "Key": "telegramCommandStatusMsgHead",

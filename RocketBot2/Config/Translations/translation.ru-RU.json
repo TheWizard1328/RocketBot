@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(HUMAN WALK) Недостаточно покеболов чтобы активировать catch Em-All режим. ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(HUMAN WALK) Найдено {0} спавнящихся | широта: {1}, долгота: {2}, дальность {3:0.00}m , пропадёт через {4:00} мин {5:00} сек | Ожидаемое время достижения : {6:00} мин {7:00} сек | Крутить PokeStop'ы: {8} | Ловить покемонов: {9}"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(HUMAN WALK) Найдено {0} покемонов проходящих ваши фильтры. Человекообразный снайпер не сможет поймать их всех, но постарается поймать как можно больше"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(HUMAN WALK) Вы в {0:0.00m} от ближайшего PokeStop'а. Перезапуск фарма в этой точке с {1} PokeStop'ами"
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(HUMAN WALK) точка назначения достигнута | широта: {0}, долгота: {1}"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Счётчик снайпера {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Во избежание бана снайпер должен отдохнуть."
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "Вы ловите слишком быстро. Вы сможете поймать следующего только через {0} секунд"
     },
@@ -238,10 +210,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "ФАРМ"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "СНАЙПЕР"
     },
     {
       "Key": "logEntryRecycling",
@@ -528,22 +496,6 @@
       "Value": "Вам нужно заполнить настройки PtcUsername и PtcPassword в auth.json!"
     },
     {
-      "Key": "snipeScan",
-      "Value": "[Снайпер] Ищем покемона для отлова в локации {0}..."
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "Снайпим {0} с {1} IV в {2}..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "[Снайпер] Покемона для отлова не обнаружено!"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "Недостаточно Pokeball'ов для старта снайпинга! ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "ПРИЁМ1"
     },
@@ -602,10 +554,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "Апгрейд покемона провален. Недостаточно ресурсов"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "Sniping сервер не доступен. Пропускаем..."
     },
     {
       "Key": "firstStartPrompt",

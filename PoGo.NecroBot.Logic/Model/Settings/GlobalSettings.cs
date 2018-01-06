@@ -63,18 +63,6 @@ namespace PoGo.NecroBot.Logic.Model.Settings
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public GpxConfig GPXConfig = new GpxConfig();
 
-        [NecroBotConfig(SheetName = "SnipeConfig", Description = "Setting up option for snipe.")]
-        [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public SnipeConfig SnipeConfig = new SnipeConfig();
-
-        [NecroBotConfig(SheetName = "HumanWalkSnipeConfig", Description = "Setting up option for human walk snipe.")]
-        [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public HumanWalkSnipeConfig HumanWalkSnipeConfig = new HumanWalkSnipeConfig();
-
-        [NecroBotConfig(SheetName = "DataSharingConfig", Description = "Setting up data socket sharing.")]
-        [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public DataSharingConfig DataSharingConfig = new DataSharingConfig();
-
         [NecroBotConfig(SheetName = "PokeStopConfig", Description = "Setting up for farming pokestop.")]
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public PokeStopConfig PokeStopConfig = new PokeStopConfig();
@@ -178,10 +166,6 @@ namespace PoGo.NecroBot.Logic.Model.Settings
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<PokemonId> PokemonToUseMasterball = CatchConfig.PokemonsToUseMasterballDefault();
 
-        [NecroBotConfig(Description = "Setting up human walk snipe filter by pokemon", SheetName = "HumanWalkSnipeFilter")]
-        [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public Dictionary<PokemonId, HumanWalkSnipeFilter> HumanWalkSnipeFilters = HumanWalkSnipeFilter.Default();
-
         [NecroBotConfig(Description = "Setting up pokemon filter for level up", SheetName = "PokemonUpgradeFilter")]
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public Dictionary<PokemonId, UpgradeFilter> PokemonUpgradeFilters = UpgradeFilter.Default();
@@ -193,10 +177,6 @@ namespace PoGo.NecroBot.Logic.Model.Settings
         [NecroBotConfig(Description = "Setting up notifications setting", SheetName = "NotificationConfig")]
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public NotificationConfig NotificationConfig = new NotificationConfig();
-
-        [NecroBotConfig(SheetName = "SnipePokemonFilter", Description = "Setup list pokemon for auto snipe")]
-        [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public Dictionary<PokemonId, SnipeFilter> SnipePokemonFilter = SnipeFilter.SniperFilterDefault();
 
         [NecroBotConfig(SheetName = "PokemonEvolveFilter", Description = "Setup list pokemon for auto evolve")]
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -210,11 +190,7 @@ namespace PoGo.NecroBot.Logic.Model.Settings
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public Dictionary<PokemonId, BotSwitchPokemonFilter> BotSwitchPokemonFilters = BotSwitchPokemonFilter.Default();
 
-        [NecroBotConfig(SheetName = "UIConfig", Description = "Define all parametter to display data on UI.")]
-        [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public GUIConfig UIConfig = new GUIConfig();
-
-        [NecroBotConfig(SheetName = "HumanlikeDelays", Description = "Define the delays for humanlike behaviour when catching pokemon")]
+       [NecroBotConfig(SheetName = "HumanlikeDelays", Description = "Define the delays for humanlike behaviour when catching pokemon")]
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public HumanlikeDelays HumanlikeDelays = new HumanlikeDelays();
 
@@ -521,24 +497,6 @@ namespace PoGo.NecroBot.Logic.Model.Settings
                         break;
 
                     case 6:
-                        // Rename AustoSnipeCandy to AutoSnipeCandy
-                        if (settings["SnipePokemonFilter"] != null)
-                        {
-                            foreach (var x in settings["SnipePokemonFilter"])
-                            {
-                                var key = ((JProperty)(x)).Name;
-                                var filter = ((JProperty)(x)).Value;
-
-                                if (filter["AustoSnipeCandy"] != null)
-                                {
-                                    filter["AutoSnipeCandy"] = filter["AustoSnipeCandy"];
-                                    ((JObject)filter).Remove("AustoSnipeCandy");
-                                }
-                            }
-                        }
-                        break;
-
-                    case 7:
                         // We making the limits more conservative.
                         if (settings["PokemonConfig"] != null)
                         {
@@ -552,20 +510,20 @@ namespace PoGo.NecroBot.Logic.Model.Settings
                                 settings["PokeStopConfig"]["PokeStopLimitMinutes"] = 1200;
                         }
                         break;
-                    case 8:
+                    case 7:
                         string oldTemplate = (string)settings["PokemonConfig"]["RenameTemplate"];
                         settings["PokemonConfig"]["RenameTemplate"] = oldTemplate.Replace("{0}", "{Name}").Replace("{1}", "{IV}") + "_LV{Level}";
                         break;
 
-                    case 9:
+                    case 8:
                         if (settings["PlayerConfig"]["RandomizeSettingsByPercent"] == null)
                         {
                             settings["PlayerConfig"]["RandomizeSettingsByPercent"] = 5;
                         }
                         break;
 
+                    case 9:
                     case 10:
-                    case 11:
                         if ((string)settings["PokemonConfig"]["DefaultBuddyPokemon"] == "dragonite" ||
                             (string)settings["PokemonConfig"]["DefaultBuddyPokemon"] == null ||
                             (string)settings["PokemonConfig"]["DefaultBuddyPokemon"] == "")
@@ -578,12 +536,12 @@ namespace PoGo.NecroBot.Logic.Model.Settings
                             settings["PokemonConfig"]["DefaultBuddyPokemon"] = new string(a);
                         }
                         break;
-                    case 13:
+                    case 11:
                         settings["PokemonConfig"]["FavoriteOperator"] = "and";
                         settings["PokemonConfig"]["FavoriteMinLevel"] = 0;
                         break;
                     // Add more here.
-                    case 14:
+                    case 12:
                         //migrate berries setting
                         if (settings["PokemonConfig"]["UseBerriesMinIv"] != null && settings["ItemUseFilters"] != null)
                         {
@@ -602,7 +560,7 @@ namespace PoGo.NecroBot.Logic.Model.Settings
                         }
 
                         break;
-                    case 15:
+                    case 13:
                         List<string> existing = new List<string>();
                         foreach (var x in settings["ItemRecycleFilter"].Children())
                         {
@@ -627,7 +585,7 @@ namespace PoGo.NecroBot.Logic.Model.Settings
 
                         break;
 
-                    case 16:
+                    case 14:
                         if (settings["PokemonEvolveFilter"] != null && settings["PokemonsToEvolve"] != null)
                         {
                             List<string> pokemonToEvolve = new List<string>();
@@ -645,7 +603,7 @@ namespace PoGo.NecroBot.Logic.Model.Settings
                         }
                         break;
 
-                    case 17:
+                    case 15:
                         if (settings["PokemonEvolveFilter"] != null && settings["PokemonsToEvolve"] != null)
                         {
                             // Repeat the migration for case 16 just in case PokemonsToEvolve has beed modified.
@@ -681,7 +639,7 @@ namespace PoGo.NecroBot.Logic.Model.Settings
                         settings.Remove("PokemonsToEvolve");
                         break;
 
-                    case 22:
+                    case 16:
                         if (settings["PokemonsTransferFilter"] != null)
                         {
                             foreach (var x in settings["PokemonsTransferFilter"])
@@ -695,7 +653,7 @@ namespace PoGo.NecroBot.Logic.Model.Settings
                         }
                         break;
 
-                    case 23:
+                    case 17:
                         if (settings["PokeStopConfig"] != null)
                         {
                             settings["PokeStopConfig"]["PokeStopLimit"] = 700;

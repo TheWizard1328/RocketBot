@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(模拟人类行走) 精灵球数量太少，模拟狙击不会激活。 ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(模拟人类行走) 发现{0}只 | 经度: {1}, 纬度: {2}, 距离 {3:0.00}米 , 在 {4:00} 分 {5:00} 秒内消失 | 行程需要: {6:00} 分 {7:00} 秒 | 旋转: {8} | 抓捕: {9} | 速度: {10:0.00}千米/小时"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(模拟人类行走) 根据设置找到 {0} 只精灵。 模拟狙击会尽量的将所有精灵抓捕"
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(模拟人类行走) 您离最近的补给站还有{0:0.00m}。 系统将会在 {1} 补给点重启"
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(模拟人类行走) 达到地点 | 经度: {0}, 纬度: {1} | 等待{3:0.00}秒"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "狙击数量 {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "为了保护您的账号，狙击程序必须休息"
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "您抓捕的速度太快。必须等待 {0} 秒。"
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "挂机"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "追踪"
     },
     {
       "Key": "logEntryRecycling",
@@ -533,22 +501,6 @@
       "Value": "您需要在auth.json中填写PTC账号和密码!\t\t"
     },
     {
-      "Key": "snipeScan",
-      "Value": "正在搜索可追踪宝可梦,坐标:{0}\t\t"
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "追踪一个 {0} 完美度:{1},坐标{2}...\t\t\t"
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "没有找到可追踪的宝可梦!\t\t"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "没有足够的精灵球用来追踪!({0}/{1})\t\t"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "快速技"
     },
@@ -607,10 +559,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "宝可梦升级失败,材料不足\t\t"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "追踪服务器当前关闭.跳过追踪....\t\t"
     },
     {
       "Key": "firstStartPrompt",

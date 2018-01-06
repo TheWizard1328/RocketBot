@@ -13,7 +13,6 @@ using POGOProtos.Enums;
 using POGOProtos.Inventory.Item;
 using POGOProtos.Map.Fort;
 using POGOProtos.Networking.Responses;
-using PoGo.NecroBot.Logic.Event.Snipe;
 using System.Linq;
 using PoGo.NecroBot.Logic.Utils;
 using PoGo.NecroBot.Logic.Model.Settings;
@@ -40,13 +39,6 @@ namespace PoGo.NecroBot.Logic.Service
         private static void HandleEvent(ErrorEvent errorEvent, ISession session)
         {
             Logger.Write(errorEvent.ToString(), LogLevel.Error, force: true);
-        }
-
-        private static void HandleEvent(SnipePokemonUpdateEvent e, ISession session)
-        {
-            //move to resource later
-            if (e.IsRemoteEvent)
-                Logger.Write($"Expired snipe pokemon has been removed from queue : {e.Data.PokemonId} ");
         }
 
         private static void HandleEvent(NoticeEvent noticeEvent, ISession session)
@@ -474,26 +466,6 @@ namespace PoGo.NecroBot.Logic.Service
             );
         }
 
-        private static void HandleEvent(SnipeEvent snipeEvent, ISession session)
-        {
-            Logger.Write(snipeEvent.ToString(), LogLevel.Sniper);
-        }
-
-        private static void HandleEvent(SnipeScanEvent snipeScanEvent, ISession session)
-        {
-            Logger.Write(snipeScanEvent.PokemonId == PokemonId.Missingno
-                ? ((snipeScanEvent.Source != null) ? "(" + snipeScanEvent.Source + ") " : null) +
-                  session.Translation.GetTranslation(TranslationString.SnipeScan,
-                      $"{snipeScanEvent.Bounds.Latitude},{snipeScanEvent.Bounds.Longitude}")
-                : ((snipeScanEvent.Source != null) ? "(" + snipeScanEvent.Source + ") " : null) +
-                  session.Translation.GetTranslation(TranslationString.SnipeScanEx,
-                      session.Translation.GetPokemonTranslation(snipeScanEvent.PokemonId),
-                      snipeScanEvent.Iv > 0
-                          ? snipeScanEvent.Iv.ToString(CultureInfo.InvariantCulture)
-                          : session.Translation.GetTranslation(TranslationString.CommonWordUnknown),
-                      $"{snipeScanEvent.Bounds.Latitude},{snipeScanEvent.Bounds.Longitude}"), LogLevel.Sniper);
-        }
-
         private static void HandleEvent(DisplayHighestsPokemonEvent displayHighestsPokemonEvent, ISession session)
         {
             if (session.LogicSettings.AmountOfPokemonToDisplayOnStart <= 0)
@@ -580,10 +552,6 @@ namespace PoGo.NecroBot.Logic.Service
             Logger.Write(updateEvent.ToString(), LogLevel.Update);
         }
 
-        private static void HandleEvent(SnipeModeEvent event1, ISession session)
-        {
-        }
-
         private static void HandleEvent(PokeStopListEvent event1, ISession session)
         {
         }
@@ -639,86 +607,6 @@ namespace PoGo.NecroBot.Logic.Service
             }
             else
                 Logger.Write(killSwitchEvent.Message, LogLevel.Info, ConsoleColor.White);
-        }
-
-        private static void HandleEvent(HumanWalkSnipeEvent ev, ISession session)
-        {
-            switch (ev.Type)
-            {
-                case HumanWalkSnipeEventTypes.StartWalking:
-                    var strPokemon = session.Translation.GetPokemonTranslation(ev.PokemonId);
-                    Logger.Write(session.Translation.GetTranslation(TranslationString.HumanWalkSnipe,
-                            strPokemon,
-                            ev.Latitude,
-                            ev.Longitude,
-                            ev.Distance,
-                            ev.Expires / 60,
-                            ev.Expires % 60,
-                            ev.Estimate / 60,
-                            ev.Estimate % 60,
-                            ev.SpinPokeStop ? "Yes" : "No",
-                            ev.CatchPokemon ? "Yes" : "No",
-                            ev.WalkSpeedApplied),
-                        LogLevel.Sniper,
-                        ConsoleColor.Yellow);
-                    break;
-                case HumanWalkSnipeEventTypes.DestinationReached:
-                    Logger.Write(
-                        session.Translation.GetTranslation(
-                            TranslationString.HumanWalkSnipeDestinationReached,
-                            ev.Latitude, ev.Longitude, ev.PauseDuration
-                        ),
-                        LogLevel.Sniper
-                    );
-                    break;
-                case HumanWalkSnipeEventTypes.PokemonScanned:
-                    if (ev.Pokemons != null && ev.Pokemons.Count > 0 && ev.DisplayMessage)
-                        Logger.Write(
-                            session.Translation.GetTranslation(TranslationString.HumanWalkSnipeUpdate,
-                                ev.Pokemons.Count, 2, 3),
-                            LogLevel.Sniper,
-                            ConsoleColor.DarkMagenta
-                        );
-                    break;
-                case HumanWalkSnipeEventTypes.PokestopUpdated:
-                    Logger.Write(
-                        session.Translation.GetTranslation(
-                            TranslationString.HumanWalkSnipeAddedPokestop,
-                            ev.NearestDistance,
-                            ev.Pokestops.Count
-                        ),
-                        LogLevel.Sniper,
-                        ConsoleColor.Yellow
-                    );
-                    break;
-                case HumanWalkSnipeEventTypes.NotEnoughtPalls:
-                    Logger.Write(
-                        session.Translation.GetTranslation(
-                            TranslationString.HumanWalkSnipeNotEnoughtBalls,
-                            ev.CurrentBalls,
-                            ev.MinBallsToSnipe
-                        ),
-                        LogLevel.Sniper,
-                        ConsoleColor.Yellow
-                    );
-                    break;
-                case HumanWalkSnipeEventTypes.EncounterSnipePokemon:
-                    Logger.Write(session.Translation.GetTranslation(TranslationString.HumanWalkSnipePokemonEncountered,
-                        session.Translation.GetPokemonTranslation(ev.PokemonId),
-                        ev.Latitude,
-                        ev.Longitude));
-                    break;
-                case HumanWalkSnipeEventTypes.AddedSnipePokemon:
-                    break;
-                case HumanWalkSnipeEventTypes.TargetedPokemon:
-                    break;
-                case HumanWalkSnipeEventTypes.ClientRequestUpdate:
-                    break;
-                case HumanWalkSnipeEventTypes.QueueUpdated:
-                    break;
-                default:
-                    break;
-            }
         }
 
         private static void HandleEvent(GymDetailInfoEvent ev, ISession session)

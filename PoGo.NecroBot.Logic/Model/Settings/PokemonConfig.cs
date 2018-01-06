@@ -346,12 +346,6 @@ namespace PoGo.NecroBot.Logic.Model.Settings
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Populate, Order = 620)]
         public int OutOfBallCatchBlockTime { get; set; }
 
-        [DefaultValue(50)]
-        [NecroBotConfig(Description = "Number of balls you want to save for snipe or manual play - it means if total balls is less than this value, catch pokemon will be deactivated", Position = 630)]
-        [Range(0, 999)]
-        [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Populate, Order = 630)]
-        public int PokeballToKeepForSnipe { get; set; }
-
         [DefaultValue(true)]
         [NecroBotConfig(Description = "Transfer multiple pokemon at once - this will increase bot speed and reduce api call", Position = 640)]
         [JsonProperty(Required = Required.DisallowNull, DefaultValueHandling = DefaultValueHandling.Populate, Order = 640)]

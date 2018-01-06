@@ -1,34 +1,6 @@
 {
   "TranslationStrings": [
     {
-      "Key": "HumanWalkSnipeNotEnoughtBalls",
-      "Value": "(SNIPER HUMANIZADO) No tiene suficientes PokeBalls para activar el modo Capturar Todo. ({0})/{1}"
-    },
-    {
-      "Key": "HumanWalkSnipe",
-      "Value": "(SNIPER HUMANIZADO) Encontrados {0} spawns | lat: {1}, lng: {2}, dist {3:0.00}m, expira en {4:00} min {5:00} sec | Tiempo estimado de caminata : {6:00} min {7:00} sec | Giros: {8} | Capturas : {9}"
-    },
-    {
-      "Key": "HumanWalkSnipeUpdate",
-      "Value": "(SNIPER HUMANIZADO) Encontrados {0} pokemon de acuerdo a tus filtros. Sniper humanizado no capturara todo, pero intentara capturar todo lo posible."
-    },
-    {
-      "Key": "HumanWalkSnipeAddedPokestop",
-      "Value": "(SNIPER HUMANIZADO) Tu estas a {0:0.00m} de la PokeParada mas cercana. Farming restante en esta ubicacion {1} PokeParada."
-    },
-    {
-      "Key": "HumanWalkSnipeDestinationReached",
-      "Value": "(SNIPER HUMANIZADO) Destino alcanzado | lat: {0}, lng: {1}"
-    },
-    {
-      "Key": "SniperCount",
-      "Value": "Contador de Sniper {0}"
-    },
-    {
-      "Key": "SnipeExceeds",
-      "Value": "Sniper necesita tomar un descanso antes de continuar, para evitar baneos"
-    },
-    {
       "Key": "CatchExceeds",
       "Value": "Estas capturando demasiado rapido. No podras capturar de nuevo en {0} segundos"
     },
@@ -239,10 +211,6 @@
     {
       "Key": "logEntryFarming",
       "Value": "FARMING"
-    },
-    {
-      "Key": "logEntrySniper",
-      "Value": "SNIPER"
     },
     {
       "Key": "logEntryRecycling",
@@ -517,22 +485,6 @@
       "Value": "Es necesario rellenar PtcUsername y PtcPassword en auth.json para utilizar el bot"
     },
     {
-      "Key": "snipeScan",
-      "Value": "[Sniper] Escaneando en busca de Pokémon en {0}..."
-    },
-    {
-      "Key": "snipeScanEx",
-      "Value": "[Sniper] Sniping a {0} con {1} IV en {2}..."
-    },
-    {
-      "Key": "noPokemonToSnipe",
-      "Value": "[Sniper] No se han encontrado Pokémon"
-    },
-    {
-      "Key": "notEnoughPokeballsToSnipe",
-      "Value": "[Sniper] No hay suficientes Poké Balls para iniciar Sniping! ({0}/{1})"
-    },
-    {
       "Key": "displayHighestMove1Header",
       "Value": "ATAQUE1"
     },
@@ -591,10 +543,6 @@
     {
       "Key": "pkmNotEnoughRessources",
       "Value": "Actualización fallida: No hay suficientes recursos"
-    },
-    {
-      "Key": "snipeServerOffline",
-      "Value": "[Sniper] Parece que el servidor de Snipping está caído. Saliendo..."
     },
     {
       "Key": "firstStartPrompt",

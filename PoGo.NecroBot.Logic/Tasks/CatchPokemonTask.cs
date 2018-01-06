@@ -70,12 +70,6 @@ namespace PoGo.NecroBot.Logic.Tasks
         // ## From CatchIncensePokemonTask
         // await CatchPokemonTask.Execute(session, cancellationToken, encounter, pokemon, currentFortData: null, sessionAllowTransfer: true).ConfigureAwait(false);
 
-        // ## From SnipePokemonTask
-        // await CatchPokemonTask.Execute(session, cancellationToken, encounter, pokemon, currentFortData: null, sessionAllowTransfer: true).ConfigureAwait(false);
-
-        // ## From MSniperServiceTask
-        // await CatchPokemonTask.Execute(session, cancellationToken, encounter, pokemon, currentFortData: null, sessionAllowTransfer: true).ConfigureAwait(false);
-
         private static int CatchFleeContinuouslyCount = 0;
         public static readonly int BALL_REQUIRED_TO_BYPASS_CATCHFLEE = 150;
 
@@ -138,7 +132,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                 ulong _encounterId;
                 string _spawnPointId;
 
-                // Calling from CatchNearbyPokemonTask and SnipePokemonTask
                 if (encounter is EncounterResponse &&
                     (encounter?.Status == EncounterResponse.Types.Status.EncounterSuccess))
                 {
@@ -192,23 +185,6 @@ namespace PoGo.NecroBot.Logic.Tasks
 
                 var distance = LocationUtils.CalculateDistanceInMeters(session.Client.ClientSession.Player.Latitude,
                     session.Client.ClientSession.Player.Longitude, latitude, longitude);
-                if (session.LogicSettings.ActivateMSniper)
-                {
-                    var newdata = new MSniperServiceTask.EncounterInfo()
-                    {
-                        EncounterId = _encounterId.ToString(),
-                        Iv = Math.Round(pokemonIv, 2),
-                        Latitude = latitude.ToString("G17", CultureInfo.InvariantCulture),
-                        Longitude = longitude.ToString("G17", CultureInfo.InvariantCulture),
-                        PokemonId = (int)(encounteredPokemon?.PokemonId ?? 0),
-                        PokemonName = encounteredPokemon?.PokemonId.ToString(),
-                        SpawnPointId = _spawnPointId,
-                        Move1 = PokemonInfo.GetPokemonMove1(encounteredPokemon).ToString(),
-                        Move2 = PokemonInfo.GetPokemonMove2(encounteredPokemon).ToString(),
-                        Expiration = unixTimeStamp
-                    };
-                    session.EventDispatcher.Send(newdata);
-                }
 
                 DateTime expiredDate =
                     new DateTime(1970, 1, 1, 0, 0, 0).AddMilliseconds(Convert.ToDouble(unixTimeStamp));
@@ -227,7 +203,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                     Move2 = PokemonInfo.GetPokemonMove2(encounteredPokemon).ToString(),
                 };
 
-                //add catch to avoid snipe duplicate
                 string uniqueCacheKey = CatchPokemonTask.GetUsernameGeoLocationCacheKey(session.Settings.Username, encounterEV.PokemonId, encounterEV.Latitude, encounterEV.Longitude);
                 session.Cache.Add(uniqueCacheKey, encounterEV, DateTime.Now.AddMinutes(30));
 
@@ -363,8 +338,6 @@ namespace PoGo.NecroBot.Logic.Tasks
 
                     if (CatchFleeContinuouslyCount >= 3 && session.LogicSettings.ByPassCatchFlee)
                     {
-                        MSniperServiceTask.BlockSnipe();
-
                         if (totalBalls <= BALL_REQUIRED_TO_BYPASS_CATCHFLEE)
                         {
                             Logger.Write("You don't have enough balls to bypass catchflee");
@@ -638,7 +611,6 @@ namespace PoGo.NecroBot.Logic.Tasks
                     if (caughtPokemonResponse.Status != CatchPokemonResponse.Types.CatchStatus.CatchMissed)
                     {
                         CatchFleeContinuouslyCount = 0;
-                        MSniperServiceTask.UnblockSnipe();
                     }
                 }
 
@@ -671,43 +643,6 @@ namespace PoGo.NecroBot.Logic.Tasks
             var evalNextBot = accountManager.FindAvailableAccountForPokemonSwitch(encounterEV.EncounterId);
             if (evalNextBot == null)
                 return;
-
-            if (session.Stats.IsSnipping
-                //assume that all pokemon catch from 250+m is snipe
-                || LocationUtils.CalculateDistanceInMeters(
-                    encounterEV.Latitude,
-                    encounterEV.Longitude,
-                    session.Client.ClientSession.Player.Latitude,
-                    session.Client.ClientSession.Player.Longitude
-                ) > 1000)
-            {
-
-                var snipePokemonFiler = session.LogicSettings.PokemonSnipeFilters.GetFilter<SnipeFilter>(encounterEV.PokemonId);
-
-                if (session.LogicSettings.PokemonSnipeFilters.ContainsKey(encounterEV.PokemonId))
-                {
-                    var filter = session.LogicSettings.PokemonSnipeFilters[encounterEV.PokemonId];
-                    if (accountManager.AllowMultipleBot() &&
-                        filter.AllowMultiAccountSnipe &&
-                        filter.IsMatch(encounterEV.IV,
-                        (PokemonMove)Enum.Parse(typeof(PokemonMove), encounterEV.Move1),
-                        (PokemonMove)Enum.Parse(typeof(PokemonMove), encounterEV.Move2),
-                        encounterEV.Level, true))
-                    {
-                        //throw
-                        throw new ActiveSwitchByPokemonException()
-                        {
-                            EncounterData = encounterEV,
-                            LastLatitude = encounterEV.Latitude,
-                            LastLongitude = encounterEV.Longitude,
-                            LastEncounterPokemonId = encounterEV.PokemonId,
-                            Snipe = true,
-                            Bot = evalNextBot
-                        };
-                    }
-                }
-                return;
-            }
 
             if (MultipleBotConfig.IsMultiBotActive(session.LogicSettings, accountManager) &&
                 session.LogicSettings.MultipleBotConfig.OnRarePokemon &&
