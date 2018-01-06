@@ -643,7 +643,11 @@ namespace RocketBot2.Forms
 
         private void Navigation_UpdatePositionEvent()
         {
-            var latlng = new PointLatLng(_session.Client.ClientSession.Player.Latitude, _session.Client.ClientSession.Player.Longitude);
+            var latlng = new PointLatLng();
+            if (_session.Client.LoggedIn)
+                latlng = new PointLatLng(_session.Client.ClientSession.Player.Latitude, _session.Client.ClientSession.Player.Longitude);
+            else
+                latlng = new PointLatLng(_session.Settings.AccountLatitude, _session.Settings.AccountLongitude);
 
             SynchronizationContext.Post(o =>
             {
@@ -703,7 +707,7 @@ namespace RocketBot2.Forms
         private async void GMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var pos = GMapControl1.FromLocalToLatLng(e.Location.X, e.Location.Y);
-            double Dist = LocationUtils.CalculateDistanceInMeters(_session.Client.ClientSession.Player.Latitude, _session.Client.ClientSession.Player.Longitude, pos.Lat, pos.Lng);
+            double Dist = LocationUtils.CalculateDistanceInMeters(_session.Settings.AccountLatitude, _session.Settings.AccountLongitude, pos.Lat, pos.Lng);
             String DistUnits = "m";
             double Alt = await _session.ElevationService.GetElevation(pos.Lat, pos.Lng).ConfigureAwait(false);
             double Speed = _session.Client.CurrentSpeed;
@@ -729,7 +733,8 @@ namespace RocketBot2.Forms
                 settings.Auth.CurrentAuthConfig.AccountLatitude = pos.Lat;
                 settings.Auth.CurrentAuthConfig.AccountLongitude = pos.Lng;
 
-                _session.Client.ClientSession.Player.SetCoordinates(pos.Lat, pos.Lng, Alt);
+                if (_session.Client.LoggedIn)
+                    _session.Client.ClientSession.Player.SetCoordinates(pos.Lat, pos.Lng, Alt);
 
                 _currentLatLng = pos;
 
