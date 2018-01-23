@@ -1,5 +1,13 @@
 # Change Log
 
+## [v2.21.1.1](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.21.1.1) (2018-01-23)
+
+[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.21.1.0...v2.21.1.1)
+
+**Merged pull requests:**
+
+- Develop [\#77](https://github.com/TheUnnamedOrganisation/RocketBot/pull/77) ([Furtif](https://github.com/Furtif))
+
 ## [v2.21.1.0](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.21.1.0) (2018-01-05)
 
 [Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.21.0.0...v2.21.1.0)
@@ -595,15 +603,15 @@
 
 ## [v2.9.2.0](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.9.2.0) (2017-05-07)
 
-[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.9.1.23...v2.9.2.0)
-
-## [v2.9.1.23](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.9.1.23) (2017-05-03)
-
-[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.9.1.24...v2.9.1.23)
+[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.9.1.24...v2.9.2.0)
 
 ## [v2.9.1.24](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.9.1.24) (2017-05-03)
 
-[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.9.1.22...v2.9.1.24)
+[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.9.1.23...v2.9.1.24)
+
+## [v2.9.1.23](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.9.1.23) (2017-05-03)
+
+[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.9.1.22...v2.9.1.23)
 
 ## [v2.9.1.22](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.9.1.22) (2017-05-02)
 
