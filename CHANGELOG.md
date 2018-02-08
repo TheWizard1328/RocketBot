@@ -1,5 +1,13 @@
 # Change Log
 
+## [v2.21.1.2](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.21.1.2) (2018-02-08)
+
+[Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.21.1.1...v2.21.1.2)
+
+**Merged pull requests:**
+
+- update appversion [\#78](https://github.com/TheUnnamedOrganisation/RocketBot/pull/78) ([Furtif](https://github.com/Furtif))
+
 ## [v2.21.1.1](https://github.com/TheUnnamedOrganisation/RocketBot/tree/v2.21.1.1) (2018-01-23)
 
 [Full Changelog](https://github.com/TheUnnamedOrganisation/RocketBot/compare/v2.21.1.0...v2.21.1.1)
