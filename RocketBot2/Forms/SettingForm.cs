@@ -298,7 +298,7 @@ namespace RocketBot2.Forms
             cbEvolvePreserveMinCandiesFromFilter.Checked = _settings.PokemonConfig.EvolveConfig.PreserveMinCandiesFromFilter;
             cbEvolveApplyLuckyEggOnEvolutionCount.Checked = _settings.PokemonConfig.EvolveConfig.ApplyLuckyEggOnEvolutionCount;
             tbEvolveApplyLuckyEggOnEvolutionCountValue.Text = _settings.PokemonConfig.EvolveConfig.ApplyLuckyEggOnEvolutionCountValue.ToString();
-            
+
             foreach (var poke in _settings.PokemonEvolveFilter)
             {
                 clbEvolve.SetItemChecked(clbEvolve.FindStringExact(poke.Key.ToString()), true);
@@ -517,7 +517,7 @@ namespace RocketBot2.Forms
         }
 
         private void PopulateDevice()
-        { 
+        {
             var device = DeviceInfoHelper.GetRandomIosDevice();
             DeviceIdTb.Text = device.DeviceId;
             AndroidBoardNameTb.Text = device.AndroidBoardName;
@@ -991,5 +991,15 @@ namespace RocketBot2.Forms
             tbPokestopSwitch.Enabled = cbSwitchOnPokestopLimit.Checked;
         }
         #endregion
+
+        private void cbSwitchOnPokestopLimit_CheckedChanged_1(object sender, EventArgs e)
+        {
+            tbPokestopSwitch.Enabled = cbSwitchOnPokestopLimit.Checked;
+        }
+
+        private void cbSwitchOnCatchLimit_CheckedChanged_1(object sender, EventArgs e)
+        {
+            tbPokemonSwitch.Enabled = cbSwitchOnCatchLimit.Checked;
+        }
     }
 }
