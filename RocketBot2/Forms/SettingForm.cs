@@ -36,11 +36,13 @@ namespace RocketBot2.Forms
         public static MultiAccountManager accountManager;
         private readonly ISession _session;
 
+
         public SettingsForm(ref GlobalSettings settings, ISession session, string[] _args)
         {
             InitializeComponent();
             _settings = settings;
             _session = session;
+
 
             args = _args;
             var Pokemons = Enum.GetValues(typeof(PokemonId)).Cast<PokemonId>().Where(id => id != PokemonId.Missingno);
@@ -74,7 +76,7 @@ namespace RocketBot2.Forms
                     lvAccounts.Items.Add($"{acc.AuthType}");
                     lvAccounts.Items[i].SubItems.Add($"{acc.Username}");
                     lvAccounts.Items[i].SubItems.Add($"{acc.Nickname}");
-                    lvAccounts.Items[i].Checked = acc.AccountActive;
+                    lvAccounts.Items[i].Checked = acc.AccountActive; // _settings.Auth.Bots[(int)acc.Id - 1].AccountActive;
                     i += 1;
                 }
                 //lvAccounts.Items[0].Remove();
@@ -625,8 +627,14 @@ namespace RocketBot2.Forms
                         if (acc.Username == lvAccounts.Items[i].SubItems[1].Text)
                         {
                             if (acc.AccountActive != lvAccounts.Items[i].Checked) Changed = true;
+
+
                             acc.AccountActive = lvAccounts.Items[i].Checked;
                             _settings.Auth.Bots[i].AccountActive = lvAccounts.Items[i].Checked;
+
+
+
+
                         }
                     }
                     _context.SaveChanges();
