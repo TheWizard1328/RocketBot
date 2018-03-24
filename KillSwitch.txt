@@ -3,7 +3,7 @@
                POKEMON GO 0.95.3
 //============================================//
 
-RocketBot2 is compatible with 0.95.3 API.
+RocketBot2 is compatible with 0.91.2 API.
 Not 100% safe all this
 
 //============================================//
