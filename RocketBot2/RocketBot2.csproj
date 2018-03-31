@@ -376,8 +376,6 @@
   <ItemGroup>
     <Content Include="Images\Miscs\PayPalDonateNow.png" />
     <Content Include="Resources\PokemonGO-Assets\items\903.png" />
-    <None Include="Resources\PokemonGO-Assets\NecroEase\markers\normal1.png" />
-    <None Include="Resources\PokemonGO-Assets\NecroEase\markers\lured1.png" />
     <Content Include="Resources\PokemonGO-Assets\pokemon\150-shiny.png" />
     <Content Include="Resources\PokemonGO-Assets\pokemon\slashed.png" />
     <EmbeddedResource Include="costura32\sqlite3.dll" />
