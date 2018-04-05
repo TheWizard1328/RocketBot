@@ -705,7 +705,7 @@ namespace RocketBot2.Forms
                 {
                     var step = new GMapRoute(_playerLocations, "step")
                     {
-                        //Stroke = new Pen(Color.FromArgb(BotRed[BotID], BotGreen[BotID], BotBlue[BotID]), 1) { DashStyle = DashStyle.Solid }
+                        //Stroke = new Pen(Color.FromArgb(BotRed[BotID], BotGreen[BotID], BotBlue[BotID]), 2) { DashStyle = DashStyle.Solid }
                         Stroke = new Pen(Color.FromArgb(255, 0, 0), 2) { DashStyle = DashStyle.Solid }
                     };
                     _playerOverlay.Routes.Add(step);
