@@ -1669,8 +1669,9 @@ namespace RocketBot2.Forms
 
             bool AutoStart = false;
             var options = new Options();
-            if (CommandLine.Parser.Default.ParseArguments(args, options))
-            {
+
+            //if (CommandLine.Parser.Default.ParseArguments(args, options))
+            //{
                 // Values are available here
                 if (options.Init)
                 {
@@ -1678,7 +1679,7 @@ namespace RocketBot2.Forms
                 }
                 if (options.AutoStart)
                     AutoStart = true;
-            }
+            //}
 
             var lastPosFile = Path.Combine(profileConfigPath, "LastPos.ini");
             if (File.Exists(lastPosFile) && settings.LocationConfig.StartFromLastPosition)
