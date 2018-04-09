@@ -131,6 +131,10 @@ namespace RocketBot2.Forms
 
             this.splitContainer2.SplitterDistance = this.splitContainer2.Height / 100 * 47;// Always keeps the logger window @ 47%/53% of the window height
 
+
+
+
+
             this.Refresh(); // Force screen refresh before items are poppulated
             SetStatusText(Application.ProductName + " " + Application.ProductVersion);
             speedLable.Parent = GMapControl1;
@@ -251,6 +255,9 @@ namespace RocketBot2.Forms
                 cbAutoWalkAI.Enabled = Instance._botStarted;
                 LoadPokeStopsRefresh.Enabled = _botStarted;
             }
+
+
+
             await InitializePokestopsAndRoute().ConfigureAwait(false);
             //Logger.Write($"Pokestop refresh time {DateTime.Now} sec");
         }
@@ -324,6 +331,8 @@ namespace RocketBot2.Forms
         {
             var lat = _session.Client.CurrentLatitude;
             var lng = _session.Client.CurrentLongitude;
+
+
 
             if (GMAPSatellite.CheckState == CheckState.Checked)
                 GMapControl1.MapProvider = GoogleSatelliteMapProvider.Instance;
@@ -865,6 +874,8 @@ namespace RocketBot2.Forms
                 Environment.Exit(0);
                 return;
             }
+
+
 
             startStopBotToolStripMenuItem.Text = @"■ Exit RocketBot2";
             _botStarted = true;
